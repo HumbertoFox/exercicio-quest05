@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { urlApiFetchName, urlApiFetchimg } from "../../services/services";
+import { urlApiFetchId, urlApiFetchImg } from "../../services/services";
 import { Div } from "../styles/cardstyle";
 
 export const CardPokemon = ({ name }) => {
@@ -9,11 +9,11 @@ export const CardPokemon = ({ name }) => {
     const [pokemonId, setPonkemonId] = useState(null);
 
     const updatefetchId = async () => {
-        await urlApiFetchName(name).then(response => setPonkemonId(response));
+        await urlApiFetchId(name).then(response => setPonkemonId(response));
     };    
 
     const updateFetchName = async () => {
-        await urlApiFetchimg(name).then(response => setPonkemon(response));
+        await urlApiFetchImg(name).then(response => setPonkemon(response));
     };
 
     useEffect(() => {

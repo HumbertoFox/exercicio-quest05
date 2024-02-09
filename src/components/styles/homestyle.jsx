@@ -133,6 +133,6 @@ button {
     transition: .3s ease-in-out;
 }
 button:hover {
-    text-shadow: 0 2px 2px #F50002;
+    text-shadow: 0 0 2px #02F502;
 }
 `;

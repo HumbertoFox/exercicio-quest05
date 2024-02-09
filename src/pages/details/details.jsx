@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { urlApiFetchId } from "../../services/services";
-import { useParams } from "react-router-dom";
+import { urlApiFetchId, urlApiFetchImg } from "../../services/services";
+import { Link, useParams } from "react-router-dom";
+import { Section } from "../../components/styles/detailsstyle";
 import axios from "axios";
 
 export const Details = () => {
@@ -16,19 +17,15 @@ export const Details = () => {
     };
 
     const getpokemonImg = async () => {
-        const resSprites = await urlApiFetchId(id).then(response => response.sprites);
-        const resOther = await resSprites.other;
-        setPonkemonImg(resOther.showdown);
+        await urlApiFetchImg(id).then(response => setPonkemonImg(response));
     };
 
     const getpokemonMoves = async () => {
-        const resMoves = await urlApiFetchId(id).then(response => response.moves);
-        setPonkemonMoves(resMoves);
+        await urlApiFetchId(id).then(response => setPonkemonMoves(response.moves));
     };
 
     const getpokemonAbilits = async () => {
-        const resAbilitsName = await urlApiFetchId(id).then(response => response.abilities);
-        setPonkemonAbilitsName(resAbilitsName);
+        await urlApiFetchId(id).then(response => setPonkemonAbilitsName(response.abilities));
     };
 
     useEffect(() => {
@@ -43,45 +40,59 @@ export const Details = () => {
     }
 
     return (
-        <>
-            <img src={pokemonImg.front_default} alt={`imagem pokemon ${pokemonId.name} frente`} />
-            <img src={pokemonImg.back_default} alt={`imagem pokemon ${pokemonId.name} traz`} />
-            <h2>{pokemonId.name}</h2>
-            <div>
-                {
-                    pokemonMoves.map((resMove, index) => {
-                        return (
-                            <p key={index}>
-                                {resMove.move.name}
-                            </p>
-                        )
-                    })
-                }
+        <Section>
+            <h1 className="h1-info">Detalhes do Pokémon</h1>
+            <div className="div-info">
+                <div className="div-img-name">
+                    <img src={pokemonImg.front_default} alt={`imagem pokemon ${pokemonId.name} frente`} />
+                    <img src={pokemonImg.back_default} alt={`imagem pokemon ${pokemonId.name} traz`} />
+                    <h2>{pokemonId.name}</h2>
+                </div>
+                <div>
+                    <div className="div-ol">
+                        <h2>Lista de Movimentos</h2>
+                        <ol className="ol-moves">
+                            {
+                                pokemonMoves.map((resMove, index) => {
+                                    return (
+                                        <li className="li-moves" key={index}>
+                                            {resMove.move.name}
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ol>
+                    </div>
+                    <div className="div-abilities-info">
+                        <h2>Lista de Habilidades</h2>
+                        <div className="div-abilities">
+                            {
+                                pokemonAbilitsName.map((resAbilit, index) => {
+                                    //     const getDestailsAbilities = async () => {
+                                    //         const resData = await axios.get(resAbilit.ability.url).then(response => response.data);
+                                    //         resEffect = await resData.effect_entries.filter(results => results.language.name === "en");
+                                    //     };
+                                    //    getDestailsAbilities();
+                                    return (
+                                        <div key={index}>
+                                            <p>
+                                                {resAbilit.ability.name}
+                                            </p>
+                                            <p>
+                                                { }
+                                            </p>
+                                            <p>
+                                                { }
+                                            </p>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                {
-                    pokemonAbilitsName.map((resAbilit, index) => {
-                        const getDestailsAbilities = async () => {
-                            const resData = await axios.get(resAbilit.ability.url).then(response => response.data);
-                            resEffect = await resData.effect_entries.filter(results => results.language.name === "en");
-                        };
-                       getDestailsAbilities();
-                        return (
-                            <div key={index}>
-                                <p>
-                                    {resAbilit.ability.name}
-                                </p>
-                                <p>
-                                    { }
-                                </p>
-                                <p>
-                                    { }
-                                </p>
-                            </div>
-                        )
-                    })
-                }
-            </div>
-        </>
+            <Link className="link-home" to={`/`}>Voltar a página Inicial</Link>
+        </Section>
     )
 };

@@ -3,20 +3,15 @@ import { URL_API, POKEMON_QUANTITY } from "./variables";
 
 const urlApiFetch = async () => {
     const response = await axios.get(`${URL_API}pokemon?limit=${POKEMON_QUANTITY}&offset=0`);
-    return response.data;
+    return await response.data;
 };
 
 const urlApiFetchId = async (id) => {
     const response = await axios.get(`${URL_API}pokemon/${id}`);
-    return  await response.data;
-};
-
-const urlApiFetchName = async (name) => {
-    const response = await axios.get(`${URL_API}pokemon/${name}`);
     return await response.data;
 };
 
-const urlApiFetchimg = async (name) => {
+const urlApiFetchImg = async (name) => {
     const urlName = await axios.get(`${URL_API}pokemon/${name}`);
     const urlData = await urlName.data;
     const urlSprites = await urlData.sprites;
@@ -35,4 +30,4 @@ const urlApiFetchTypeSelected = async (typeSelected) => {
     return await response.data;
 };
 
-export { urlApiFetch, urlApiFetchName, urlApiFetchId, urlApiFetchimg, urlApiFetchType, urlApiFetchTypeSelected };
+export { urlApiFetch, urlApiFetchId, urlApiFetchImg, urlApiFetchType, urlApiFetchTypeSelected };
