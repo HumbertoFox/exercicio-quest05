@@ -44,13 +44,13 @@ export const Details = () => {
             <h1 className="h1-info">Detalhes do Pokémon</h1>
             <div className="div-info">
                 <div className="div-img-name">
+                    <h2>{pokemonId.name}</h2>
                     <img src={pokemonImg.front_default} alt={`imagem pokemon ${pokemonId.name} frente`} />
                     <img src={pokemonImg.back_default} alt={`imagem pokemon ${pokemonId.name} traz`} />
-                    <h2>{pokemonId.name}</h2>
                 </div>
                 <div>
                     <div className="div-ol">
-                        <h2>Lista de Movimentos</h2>
+                        <h2 className="h2-ol">Lista de Movimentos</h2>
                         <ol className="ol-moves">
                             {
                                 pokemonMoves.map((resMove, index) => {
@@ -64,7 +64,7 @@ export const Details = () => {
                         </ol>
                     </div>
                     <div className="div-abilities-info">
-                        <h2>Lista de Habilidades</h2>
+                        <h2 className="h2-div">Lista de Habilidades</h2>
                         <div className="div-abilities">
                             {
                                 pokemonAbilitsName.map((resAbilit, index) => {
@@ -75,9 +75,9 @@ export const Details = () => {
                                     //    getDestailsAbilities();
                                     return (
                                         <div key={index}>
-                                            <p>
+                                            <h3 className="h3-abilit">
                                                 {resAbilit.ability.name}
-                                            </p>
+                                            </h3>
                                             <p>
                                                 { }
                                             </p>

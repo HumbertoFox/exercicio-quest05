@@ -14,6 +14,7 @@ a {
 }
 a:hover .front {
     opacity: 1;
+    transform: scale(1.1);
 }
 a:hover .back {
     opacity: 0;

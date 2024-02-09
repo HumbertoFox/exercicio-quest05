@@ -134,5 +134,6 @@ button {
 }
 button:hover {
     text-shadow: 0 0 2px #02F502;
+    transform: scale(1.1);
 }
 `;
