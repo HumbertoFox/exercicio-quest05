@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { urlApiFetchId, urlApiFetchImg } from "../../services/services";
-import { Div } from "../styles/cardstyle";
 
 export const CardPokemon = ({ name }) => {
     const [pokemon, setPokemon] = useState(null);
@@ -47,12 +46,12 @@ export const CardPokemon = ({ name }) => {
     }
 
     return (
-        <Div className="div-card">
+        <div className="div-card">
             <h2>{pokemonId.name}</h2>
-            <Link to={`/details/${pokemonId.id}`}>
-                <img className="back" src={pokemon.back_default} alt={`Image ${pokemon.name}`} />
+            <Link className="link-details" to={`/details/${pokemonId.id}`}>
+                <img className="back" src={pokemon.back_default} alt={`Image ${pokemonId.name}`} />
                 <img className="front" src={pokemon.front_default} alt={`Image ${pokemonId.name}`} />
             </Link>
-        </Div>
+        </div>
     );
 };

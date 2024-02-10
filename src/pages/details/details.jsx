@@ -40,24 +40,31 @@ export const Details = () => {
     if (!pokemonId || !pokemonImg || !pokemonMoves || !pokemonAbilities) {
         return <div>Loading...</div>;
     }
-
     return (
         <Section>
             <h1 className="h1-info">Detalhes do Pokémon</h1>
             <div className="div-info">
-                <div className="div-img-name">
-                    <CardPokemon name={pokemonId.name} />
-                </div>
+                <CardPokemon name={pokemonId.name} />
                 <div>
-                    <div className="div-ol">
-                        <h2 className="h2-ol">Lista de Movimentos</h2>
-                        <ol className="ol-moves">
-                            {pokemonMoves.map((resMove, index) => (
-                                <li className="li-moves" key={index}>
-                                    {resMove.move.name}
-                                </li>
-                            ))}
-                        </ol>
+                    <div className="div-types-ol">
+                        <div className="div-types">
+                            <h2 className="h2-types">Tipos</h2>
+                            <div className="div-h3">
+                                {pokemonId.types.map((types, index) => (
+                                    <h3 className="h3-types" key={index}>{types.type.name}</h3>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="div-ol">
+                            <h2 className="h2-ol">Lista de Movimentos</h2>
+                            <ol className="ol-moves">
+                                {pokemonMoves.map((resMove, index) => (
+                                    <li className="li-moves" key={index}>
+                                        {resMove.move.name}
+                                    </li>
+                                ))}
+                            </ol>
+                        </div>
                     </div>
                     <div className="div-abilities-info">
                         <h2 className="h2-div">Lista de Habilidades</h2>

@@ -104,6 +104,29 @@ li:hover h2::after {
     align-items: center;
     justify-content: center;
 }
+.link-details {
+    position: relative;
+    display: flex;
+}
+a:hover .front {
+    opacity: 1;
+}
+a:hover .back {
+    opacity: 0;
+}
+
+.front {
+    position: absolute;
+    opacity: 0;
+}
+.back {
+    transform: scalex(-1);
+    z-index: -1;
+}
+.back,
+.front {
+    transition: .5s ease-in-out;
+}
 
 h2 {
     position: absolute;
