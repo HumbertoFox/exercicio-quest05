@@ -32,7 +32,6 @@ export const SelectType = ({ pokeTypeSelectedList }) => {
             <option>Todos</option>
             {
                 typeList.map(resType => {
-                    console.log();
                     return (
                         <option key={resType.name} value={resType.name}>{resType.name}</option>
                     )

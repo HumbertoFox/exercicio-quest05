@@ -1,42 +1,43 @@
 import { useEffect, useState } from "react";
-import { urlApiFetchId, urlApiFetchImg } from "../../services/services";
+import { urlApiFetchAbilities, urlApiFetchId, urlApiFetchImg } from "../../services/services";
 import { Link, useParams } from "react-router-dom";
 import { Section } from "../../components/styles/detailsstyle";
-import axios from "axios";
 
 export const Details = () => {
 
-    const [pokemonId, setPonkemonId] = useState([]);
-    const [pokemonImg, setPonkemonImg] = useState([]);
-    const [pokemonMoves, setPonkemonMoves] = useState([]);
-    const [pokemonAbilitsName, setPonkemonAbilitsName] = useState([]);
+    const [pokemonId, setPokemonId] = useState(null);
+    const [pokemonImg, setPokemonImg] = useState(null);
+    const [pokemonMoves, setPokemonMoves] = useState([]);
+    const [pokemonAbilities, setPokemonAbilities] = useState([]);
     const { id } = useParams();
 
-    const getApiPokemonsId = async () => {
-        await urlApiFetchId(id).then(response => setPonkemonId(response));
-    };
-
-    const getpokemonImg = async () => {
-        await urlApiFetchImg(id).then(response => setPonkemonImg(response));
-    };
-
-    const getpokemonMoves = async () => {
-        await urlApiFetchId(id).then(response => setPonkemonMoves(response.moves));
-    };
-
-    const getpokemonAbilits = async () => {
-        await urlApiFetchId(id).then(response => setPonkemonAbilitsName(response.abilities));
-    };
-
     useEffect(() => {
-        getApiPokemonsId();
-        getpokemonImg();
-        getpokemonMoves();
-        getpokemonAbilits();
-    }, []);
+        const fetchData = async () => {
+            try {
+                const idData = await urlApiFetchId(id);
+                const imgData = await urlApiFetchImg(id);
+                const movesData = idData.moves;
+                const abilitiesData = idData.abilities.map(async (ability) => {
+                    const abilityDetails = await urlApiFetchAbilities(ability.ability.name);
+                    return {
+                        name: ability.ability.name,
+                        effect: abilityDetails[0].effect,
+                        shortEffect: abilityDetails[0].short_effect
+                    };
+                });
+                setPokemonId(idData);
+                setPokemonImg(imgData);
+                setPokemonMoves(movesData);
+                setPokemonAbilities(await Promise.all(abilitiesData));
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+        fetchData();
+    }, [id]);
 
-    if (pokemonId === null) {
-        <span>-</span>
+    if (!pokemonId || !pokemonImg || !pokemonMoves || !pokemonAbilities) {
+        return <div>Loading...</div>;
     }
 
     return (
@@ -52,47 +53,28 @@ export const Details = () => {
                     <div className="div-ol">
                         <h2 className="h2-ol">Lista de Movimentos</h2>
                         <ol className="ol-moves">
-                            {
-                                pokemonMoves.map((resMove, index) => {
-                                    return (
-                                        <li className="li-moves" key={index}>
-                                            {resMove.move.name}
-                                        </li>
-                                    )
-                                })
-                            }
+                            {pokemonMoves.map((resMove, index) => (
+                                <li className="li-moves" key={index}>
+                                    {resMove.move.name}
+                                </li>
+                            ))}
                         </ol>
                     </div>
                     <div className="div-abilities-info">
                         <h2 className="h2-div">Lista de Habilidades</h2>
                         <div className="div-abilities">
-                            {
-                                pokemonAbilitsName.map((resAbilit, index) => {
-                                    //     const getDestailsAbilities = async () => {
-                                    //         const resData = await axios.get(resAbilit.ability.url).then(response => response.data);
-                                    //         resEffect = await resData.effect_entries.filter(results => results.language.name === "en");
-                                    //     };
-                                    //    getDestailsAbilities();
-                                    return (
-                                        <div key={index}>
-                                            <h3 className="h3-abilit">
-                                                {resAbilit.ability.name}
-                                            </h3>
-                                            <p>
-                                                { }
-                                            </p>
-                                            <p>
-                                                { }
-                                            </p>
-                                        </div>
-                                    )
-                                })
-                            }
+                            {pokemonAbilities.map((ability, index) => (
+                                <div key={index}>
+                                    <h3 className="h3-abilit">{ability.name}</h3>
+                                    <p>{ability.effect}</p>
+                                    <p>{ability.shortEffect}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
             </div>
             <Link className="link-home" to={`/`}>Voltar a página Inicial</Link>
         </Section>
-    )
+    );
 };

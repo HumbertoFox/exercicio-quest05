@@ -30,4 +30,11 @@ const urlApiFetchTypeSelected = async (typeSelected) => {
     return await response.data;
 };
 
-export { urlApiFetch, urlApiFetchId, urlApiFetchImg, urlApiFetchType, urlApiFetchTypeSelected };
+const urlApiFetchAbilities = async (name) => {
+    const response = await axios.get(`${URL_API}ability/${name}`);
+    const resData = response.data;
+    const resFilter = await resData.effect_entries.filter(results => results.language.name === "en");
+    return await resFilter;
+};
+
+export { urlApiFetch, urlApiFetchId, urlApiFetchImg, urlApiFetchType, urlApiFetchTypeSelected, urlApiFetchAbilities };

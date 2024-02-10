@@ -7,16 +7,17 @@ library.add(fas);
 
 export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
 
-    const [pokemonSearch, setPonkemonSearch] = useState(pokemonSearchList);
+    const [pokemonSearch, setPokemonSearch] = useState(pokemonSearchList);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const handleSubmitList = async (data) => {
-        setPonkemonSearch(pokemonSearchList.filter(pokeName => pokeName.name === data.name));
+        const filteredPokemon = pokemonSearchList.filter(pokeName => pokeName.name === data.name);
+        setPokemonSearch(filteredPokemon);
     };
 
     useEffect(() => {
-        setPonkemonSearch(pokemonSearchList);
-    }, []);
+        setPokemonSearch(pokemonSearchList);
+    }, [pokemonSearchList]);
 
     useEffect(() => {
         pokemonSearch.length !== 0 ?
@@ -27,7 +28,7 @@ export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
 
     return (
         <form onSubmit={handleSubmit(handleSubmitList)} >
-            <FontAwesomeIcon icon="fas fa-search" />
+            <FontAwesomeIcon icon={["fas", "search"]} />
             <input
                 type="search"
                 id="name"

@@ -10,28 +10,28 @@ var urlNext;
 
 export const Home = () => {
 
-    const [pokemonList, setPonkemonList] = useState(null);
+    const [pokemonList, setPokemonList] = useState(null);
 
     const updateList = async () => {
         const resUrl = await axios.get(urlNext.next);
         urlNext = await resUrl.data;
-        setPonkemonList(response => [...response, ...urlNext.results]);
+        setPokemonList(response => [...response, ...urlNext.results]);
     };
 
     function newListPokemon(newList) {
-        setPonkemonList(newList);
+        setPokemonList(newList);
     };
 
     function pokeTypeList(pokeListType) {
         if (pokeListType !== null) {
-            setPonkemonList(pokeListType);
+            setPokemonList(pokeListType);
         };
     };
 
     useEffect(() => {
         const getfetch = async () => {
             urlNext = await urlApiFetch();
-            setPonkemonList(urlNext.results);
+            setPokemonList(urlNext.results);
         };
         getfetch();
     }, []);
@@ -63,4 +63,3 @@ export const Home = () => {
         </Section>
     );
 };
-
