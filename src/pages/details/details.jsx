@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { urlApiFetchAbilities, urlApiFetchId, urlApiFetchImg } from "../../services/services";
 import { Link, useParams } from "react-router-dom";
 import { Section } from "../../components/styles/detailsstyle";
+import { CardPokemon } from "../../components/card/pokemoncard";
 
 export const Details = () => {
 
@@ -45,9 +46,7 @@ export const Details = () => {
             <h1 className="h1-info">Detalhes do Pokémon</h1>
             <div className="div-info">
                 <div className="div-img-name">
-                    <h2>{pokemonId.name}</h2>
-                    <img src={pokemonImg.front_default} alt={`imagem pokemon ${pokemonId.name} frente`} />
-                    <img src={pokemonImg.back_default} alt={`imagem pokemon ${pokemonId.name} traz`} />
+                    <CardPokemon name={pokemonId.name} />
                 </div>
                 <div>
                     <div className="div-ol">
