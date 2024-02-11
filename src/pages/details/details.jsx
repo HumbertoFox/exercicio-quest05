@@ -68,13 +68,15 @@ export const Details = () => {
                     </div>
                     <div className="div-abilities-info">
                         <h2 className="h2-div">Abilities List</h2>
-                        {pokemonAbilities.map((ability, index) => (
-                            <div className="div-abilities" key={index}>
-                                <h3 className="h3-abilit">{ability.name}</h3>
-                                <p>{ability.effect}</p>
-                                <p>{ability.shortEffect}</p>
-                            </div>
-                        ))}
+                        <div className="div-abilities">
+                            {pokemonAbilities.map((ability, index) => (
+                                <div className="div-abilities-details" key={index}>
+                                    <h3 className="h3-abilit">{ability.name}</h3>
+                                    <p>{ability.effect}</p>
+                                    <p>{ability.shortEffect}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -6,16 +6,14 @@ display: flex;
 justify-content: space-between;
 padding: 10px;
 
-img {
+.img-pokemon {
     width: 100px;
 }
-h1 {
+.img-pokedex {
     position: absolute;
-    top: 30px;
+    top: 50%;
     left: 50%;
-    font-family: 'Pokemon Solid', sans-serif;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    cursor: default;
+	transform: translate(-50%, -50%);
+    width: 200px;
 }
 `;

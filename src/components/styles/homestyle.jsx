@@ -37,7 +37,7 @@ input[type=search],
 input[type=submit],
 select {
     height: 35px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -151,12 +151,13 @@ button {
     display: block;
     font-size: 15px;
     font-weight: bold;
+    color: #0202F5;
     padding: 10px;
     margin: 0 auto;
     transition: .3s ease-in-out;
 }
 button:hover {
-    text-shadow: 0 0 2px #02F502;
+    text-shadow: 0 0 2px #F5F502;
     transform: scale(1.1);
 }
 `;

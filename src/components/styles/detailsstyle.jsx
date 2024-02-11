@@ -7,7 +7,7 @@ export const Section = styled.section`
     font-family: 'Roboto', sans-serif;
 
 .div-info {
-    max-width: 70%;
+    max-width: 45%;
     display: flex;
     gap: 50px;
     margin-top: 10px;
@@ -49,10 +49,10 @@ export const Section = styled.section`
 .div-h3 {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 5px;
 }
 .h3-types {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
     text-transform: capitalize;
     padding: 5px 10px;
@@ -69,7 +69,7 @@ h2 {
     text-align: center;
 }
 .ol-moves {
-    width: 220px;
+    width: 180px;
     height: 65px;
     display: flex;
     flex-direction: column;
@@ -90,6 +90,10 @@ h2 {
     flex-direction: column;
 }
 .div-abilities {
+    max-height: 130px;
+    overflow-y: auto;
+}
+.div-abilities-details {
     display: flex;
     flex-direction: column;
 }
@@ -105,12 +109,12 @@ h2 {
 .link-home {
     font-size: 15px;
     font-weight: bold;
-    color: #000;
+    color: #0202F5;
     margin-top: 15px;
     transition: .3s ease-in-out;
 }
 .link-home:hover {
-    text-shadow: 0 0 2px #0202F5;
+    text-shadow: 0 0 2px #F5F502;
     transform: scale(1.1);
 }
 `;

@@ -7,13 +7,15 @@ export const SelectType = ({ pokeTypeSelectedList }) => {
     const [typeSelectedList, setTypeSelectedList] = useState(typeList)
 
     const pokemonTypeList = async () => {
-        const response = await urlApiFetchType().then(response => response.results);
-        setTypeList(response.filter(type => type.name !== "unknown" && type.name !== "shadow"));
+        const resTypes = await urlApiFetchType().then(response => response.results);
+        const response = resTypes.filter(type => type.name !== "unknown" && type.name !== "shadow");
+        return setTypeList(response);
     };
 
     const selectTypeList = async (typeSelected) => {
-        await urlApiFetchTypeSelected(typeSelected)
-            .then(response => setTypeSelectedList(response.pokemon.map(pokemonType => pokemonType.pokemon)));
+        const response = await urlApiFetchTypeSelected(typeSelected)
+            .then(response => response.pokemon.map(pokemonType => pokemonType.pokemon));
+        return setTypeSelectedList(response);
     };
 
     useEffect(() => {
@@ -29,7 +31,7 @@ export const SelectType = ({ pokeTypeSelectedList }) => {
 
     return (
         <select className="select-type" onChange={event => selectTypeList(event.target.value)}>
-            <option>Everyone</option>
+            <option value={""}>All Types</option>
             {
                 typeList.map(resType => {
                     return (

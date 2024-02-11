@@ -11,6 +11,7 @@ export const GlobalStyleis = createGlobalStyle`
 
   body {
     min-width: 375px;
+    min-height: 100vh;
   }
   
   ul {
