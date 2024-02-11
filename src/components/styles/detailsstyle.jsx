@@ -9,16 +9,18 @@ export const Section = styled.section`
 .div-info {
     max-width: 70%;
     display: flex;
-    align-items: center;
-    margin-top: 30px;
+    gap: 50px;
+    margin-top: 10px;
 }
 
+.h1-info {
+    font-size: 16px;
+}
 .div-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
-    margin-right: 100px;
+    gap: 20px;
 }
 .link-details {
     display: flex;
@@ -50,16 +52,16 @@ export const Section = styled.section`
     gap: 15px;
 }
 .h3-types {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
     padding: 5px 10px;
     border: 1px solid #000;
     border-radius: 5px;
 }
 
-.h2-ol,
-.h2-div,
-.h2-types {
-    font-size: 18px;
+h2 {
+    font-size: 15px;
 }
 .div-ol {
     display: flex;
@@ -67,40 +69,44 @@ export const Section = styled.section`
     text-align: center;
 }
 .ol-moves {
-    width: 250px;
-    height: 50px;
+    width: 220px;
+    height: 65px;
     display: flex;
-    flex-wrap: wrap;
-    row-gap: 10px;
-    column-gap: 40px;
+    flex-direction: column;
+    gap: 5px;
     overflow-y: auto;
-    padding-left: 40px;
-    margin-top: 10px;
+    padding: 10px 0 10px 40px;
+    margin: 10px 0;
 }
 .li-moves {
-    width: 100px;
     text-align: start;
+    font-size: 12px;
     font-weight: 400;
+    text-transform: capitalize;
 }
 
 .div-abilities-info {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 .div-abilities {
-    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
 }
 .h3-abilit {
-    text-align: center;
-    font-size: 15px;
+    font-size: 14px;
+    text-transform: capitalize;
+    padding: 10px 0 5px 0;
+}
+.div-abilities p {
+    font-size: 12px;
 }
 
 .link-home {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     color: #000;
-    margin: 100px 0 30px 0;
+    margin-top: 15px;
     transition: .3s ease-in-out;
 }
 .link-home:hover {

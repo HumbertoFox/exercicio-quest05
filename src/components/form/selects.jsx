@@ -29,7 +29,7 @@ export const SelectType = ({ pokeTypeSelectedList }) => {
 
     return (
         <select className="select-type" onChange={event => selectTypeList(event.target.value)}>
-            <option>Todos</option>
+            <option>Everyone</option>
             {
                 typeList.map(resType => {
                     return (

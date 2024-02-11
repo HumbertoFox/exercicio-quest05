@@ -32,14 +32,14 @@ export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
             <input
                 type="search"
                 id="name"
-                placeholder="Nome do Pokemon na lista"
+                placeholder="Name in the list"
                 {
                 ...register('name', {
                     required: true,
                     minLength: 3,
                 })
                 } />
-            <input type="submit" value="Pesquisar" />
+            <input type="submit" value="Search" />
         </form>
     );
 };
