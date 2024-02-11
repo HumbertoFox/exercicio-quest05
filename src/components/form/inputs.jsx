@@ -11,7 +11,7 @@ export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const handleSubmitList = async (data) => {
-        const filteredPokemon = pokemonSearchList.filter(pokeName => pokeName.name === data.name);
+        const filteredPokemon = pokemonSearchList.filter(pokeName => pokeName.name.includes(data.name));
         setPokemonSearch(filteredPokemon);
     };
 
@@ -24,7 +24,6 @@ export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
             pokemon(pokemonSearch) :
             pokemon(pokemonSearchList);
     }, [pokemonSearch]);
-
 
     return (
         <form onSubmit={handleSubmit(handleSubmitList)} >

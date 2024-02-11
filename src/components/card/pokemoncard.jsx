@@ -31,7 +31,7 @@ export const CardPokemon = ({ name }) => {
     useEffect(() => {
         updateFetchName();
         updateFetchId();
-    }, []);
+    }, [name]);
 
     if (loading) {
         return <span>Loading...</span>;

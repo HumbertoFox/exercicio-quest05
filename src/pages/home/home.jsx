@@ -24,7 +24,9 @@ export const Home = () => {
 
     function pokeTypeList(pokeListType) {
         if (pokeListType !== null) {
-            setPokemonList(pokeListType);
+            const selectNewListType = pokeListType;
+            const sliceSelectTypes = selectNewListType.slice(0, 10)
+            setPokemonList(sliceSelectTypes);
         };
     };
 

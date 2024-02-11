@@ -28,13 +28,12 @@ export const Section = styled.section`
     gap: 25px;
     cursor: default;
 }
-.front,
-.back {
+.front {
     display: block;
     margin: 0 auto;
 }
 .back {
-    transform: scaleX(-1);
+    display: none;
 }
 .div-types-ol {
     display: flex;
