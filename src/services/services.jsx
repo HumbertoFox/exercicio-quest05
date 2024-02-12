@@ -21,20 +21,24 @@ const urlApiFetchImg = async (name) => {
 };
 
 const urlApiFetchType = async () => {
-    const response = await axios.get(`${URL_API}type/`);
-    return await response.data;
+    const urlTypes = await axios.get(`${URL_API}type/`);
+    const urlDataResults = await urlTypes.data.results;
+    const response = await urlDataResults.filter(type => type.name !== "unknown" && type.name !== "shadow");
+    return await response;
 };
 
 const urlApiFetchTypeSelected = async (typeSelected) => {
-    const response = await axios.get(`${URL_API}type/${typeSelected}/`);
-    return await response.data;
+    const urlAllTypes = await axios.get(`${URL_API}type/${typeSelected}/`);
+    const pokemonsListTypes = await urlAllTypes.data.pokemon;
+    const response = await pokemonsListTypes.map(pokemonType => pokemonType.pokemon);
+    return await response;
 };
 
 const urlApiFetchAbilities = async (name) => {
-    const response = await axios.get(`${URL_API}ability/${name}`);
-    const resData = response.data;
-    const resFilter = await resData.effect_entries.filter(results => results.language.name === "en");
-    return await resFilter;
+    const urlAbilitiesPokemon = await axios.get(`${URL_API}ability/${name}`);
+    const abilitiesData = urlAbilitiesPokemon.data;
+    const response = await abilitiesData.effect_entries.filter(results => results.language.name === "en");
+    return await response;
 };
 
 export { urlApiFetch, urlApiFetchId, urlApiFetchImg, urlApiFetchType, urlApiFetchTypeSelected, urlApiFetchAbilities };

@@ -23,17 +23,19 @@ export const Home = () => {
     };
 
     function pokeTypeList(pokeListType) {
+        let limitList = 10;
         if (pokeListType !== null) {
             const selectNewListType = pokeListType;
-            const sliceSelectTypes = selectNewListType.slice(0, 10)
-            setPokemonList(sliceSelectTypes);
+            const response = selectNewListType.slice(0, limitList)
+            setPokemonList(response);
         };
     };
 
     useEffect(() => {
         const getfetch = async () => {
             urlNext = await urlApiFetch();
-            setPokemonList(urlNext.results);
+            const response = await urlNext.results;
+            setPokemonList(response);
         };
         getfetch();
     }, []);
