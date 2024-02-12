@@ -1,12 +1,28 @@
 import styled from "styled-components";
 
-export const Section = styled.section`
-.div-form-select {
+const Section = styled.section`
+
+button {
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0202F5;
+    padding: 10px;
+    margin: 0 auto;
+    transition: .3s ease-in-out;
+}
+button:hover {
+    text-shadow: 0 0 2px #F5F502;
+    transform: scale(1.1);
+}
+`;
+
+const DivForm = styled.div`
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-bottom: 20px;
-}
+
 form {
     display: flex;
     align-items: center;
@@ -49,13 +65,14 @@ select {
     border: 1px solid;
     border-color: #999 #000 #000 #999;
 }
+`;
 
-ul {
+const UlList = styled.ul`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-}
+
 li {
     width: 230px;
     height: 230px;
@@ -146,18 +163,6 @@ h2::after {
     border-radius: 50%;
     z-index: 1;
 }
-
-button {
-    display: block;
-    font-size: 15px;
-    font-weight: bold;
-    color: #0202F5;
-    padding: 10px;
-    margin: 0 auto;
-    transition: .3s ease-in-out;
-}
-button:hover {
-    text-shadow: 0 0 2px #F5F502;
-    transform: scale(1.1);
-}
 `;
+
+export { Section, DivForm, UlList };

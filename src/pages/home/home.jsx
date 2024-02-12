@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Section } from "../../components/styles/homestyle"
+import { DivForm, Section, UlList } from "../../components/styles/homestyle"
 import { urlApiFetch } from "../../services/services";
 import { CardPokemon } from "../../components/card/pokemoncard";
 import { FormSearchList } from "../../components/form/inputs";
@@ -48,11 +48,11 @@ export const Home = () => {
 
     return (
         <Section>
-            <div className="div-form-select">
+            <DivForm>
                 <FormSearchList pokemonSearchList={pokemonList} pokemon={newListPokemon} />
                 <SelectType pokeTypeSelectedList={pokeTypeList} />
-            </div>
-            <ul>
+            </DivForm>
+            <UlList>
                 {
                     pokemonList.map((pokemonUnid, index) => {
                         return (
@@ -62,7 +62,7 @@ export const Home = () => {
                         );
                     })
                 }
-            </ul>
+            </UlList>
             <ButtonNext onClick={() => updateList()}>{"Load More"}</ButtonNext>
         </Section>
     );
