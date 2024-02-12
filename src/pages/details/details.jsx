@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { urlApiFetchAbilities, urlApiFetchId, urlApiFetchImg } from "../../services/services";
 import { Link, useParams } from "react-router-dom";
-import { Section } from "../../components/styles/detailsstyle";
+import { AbilitiesInfo, AbilitiesSub, Container, DivOl, MainDetails, Section, TypesDiv, TypesOl } from "../../components/styles/detailsstyle";
 import { CardPokemon } from "../../components/card/pokemoncard";
 
 export const Details = () => {
@@ -42,45 +42,45 @@ export const Details = () => {
     }
     return (
         <Section>
-            <h1 className="h1-info">Pokémon Details</h1>
-            <div className="div-info">
+            <h1>Pokémon Details</h1>
+            <Container>
                 <CardPokemon name={pokemonId.name} />
-                <div>
-                    <div className="div-types-ol">
-                        <div className="div-types">
-                            <h2 className="h2-types">Types</h2>
-                            <div className="div-h3">
+                <MainDetails>
+                    <TypesOl>
+                        <TypesDiv>
+                            <h2>Types</h2>
+                            <div>
                                 {pokemonId.types.map((types, index) => (
-                                    <h3 className="h3-types" key={index}>{types.type.name}</h3>
+                                    <h3 key={index}>{types.type.name}</h3>
                                 ))}
                             </div>
-                        </div>
-                        <div className="div-ol">
-                            <h2 className="h2-ol">Moves List</h2>
-                            <ol className="ol-moves">
+                        </TypesDiv>
+                        <DivOl>
+                            <h2>Moves List</h2>
+                            <ol>
                                 {pokemonMoves.map((resMove, index) => (
-                                    <li className="li-moves" key={index}>
+                                    <li key={index}>
                                         {resMove.move.name}
                                     </li>
                                 ))}
                             </ol>
-                        </div>
-                    </div>
-                    <div className="div-abilities-info">
-                        <h2 className="h2-div">Abilities List</h2>
-                        <div className="div-abilities">
+                        </DivOl>
+                    </TypesOl>
+                    <AbilitiesInfo>
+                        <h2>Abilities List</h2>
+                        <AbilitiesSub>
                             {pokemonAbilities.map((ability, index) => (
-                                <div className="div-abilities-details" key={index}>
+                                <div key={index}>
                                     <h3 className="h3-abilit">{ability.name}</h3>
                                     <p>{ability.effect}</p>
                                     <p>{ability.shortEffect}</p>
                                 </div>
                             ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <Link className="link-home" to={`/`}>Back to Home</Link>
+                        </AbilitiesSub>
+                    </AbilitiesInfo>
+                </MainDetails>
+            </Container>
+            <Link to={`/`}>Back to Home</Link>
         </Section>
     );
 };
