@@ -46,11 +46,11 @@ export const CardPokemon = ({ name }) => {
     }
 
     return (
-        <div className="div-card">
+        <div>
             <h2>{pokemonId.name}</h2>
-            <Link className="link-details" to={`/details/${pokemonId.id}`}>
-                <img className="back" src={pokemon.back_default} alt={`Image ${pokemonId.name}`} />
-                <img className="front" src={pokemon.front_default} alt={`Image ${pokemonId.name}`} />
+            <Link to={`/details/${pokemonId.id}`}>
+                <img src={pokemon.back_default} alt={`Image ${pokemonId.name}`} />
+                <img src={pokemon.front_default} alt={`Image ${pokemonId.name}`} />
             </Link>
         </div>
     );

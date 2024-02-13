@@ -116,33 +116,31 @@ li:hover h2::after {
     content: none;
 }
 
-.div-card {
+div {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.link-details {
+a {
     position: relative;
     display: flex;
 }
-a:hover .front {
+a:hover img:nth-child(1) {
+    opacity: 0;
+}
+a:hover img:nth-child(2) {
     opacity: 1;
 }
-a:hover .back {
-    opacity: 0;
-}
 
-.front {
-    position: absolute;
-    opacity: 0;
-}
-.back {
+img:nth-child(1) {
     transform: scalex(-1);
+    transition: .5s ease-in-out;
     z-index: -1;
 }
-.back,
-.front {
+img:nth-child(2) {
+    position: absolute;
     transition: .5s ease-in-out;
+    opacity: 0;
 }
 
 h2 {
