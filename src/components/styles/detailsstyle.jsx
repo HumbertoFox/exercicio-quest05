@@ -14,50 +14,48 @@ h2 {
     font-size: 15px;
 }
 
-a {
+a:nth-child(3) {
     font-size: 15px;
     font-weight: bold;
     color: #0202F5;
     margin-top: 15px;
     transition: .3s ease-in-out;
 }
-a:hover {
+a:nth-child(3):hover {
     text-shadow: 0 0 2px #F5F502;
     transform: scale(1.1);
 }
 `;
 
-// const CardPokemon = styled(CardPokemon)`
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     gap: 25%;
-//     padding-top: 5px;
-//     border: 3px solid;
-//     border-color: #999 #000 #000 #999;
-// .link-details {
-//     display: flex;
-//     cursor: default;
-// }
-// .front {
-//     display: block;
-// }
-// .back {
-//     display: none;
-// }
-// `;
-
 const Container = styled.div`
     width: 570px;
     display: flex;
     gap: 10px;
-    background-color: #D8092E;
-    color: #FFF;
     padding: 5px;
     margin-top: 10px;
-    border: 3px solid;
+    border: 6px solid;
     border-color: #999 #000 #000 #999;
     box-shadow: 10px 10px 10px #999;
+`;
+
+const DivImg = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20%;
+    padding: 5px;
+    border: 3px solid;
+    border-color: #999 #000 #000 #999;
+a {
+    display: flex;
+    cursor: default;
+}
+img:first-child {
+    display: none;
+}
+img:last-child {
+    display: block;
+}
 `;
 
 const MainDetails = styled.div`
@@ -105,11 +103,9 @@ ol {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    scrollbar-color: #FFF #D8092E;
     overflow-y: auto;
     padding: 10px 0 10px 30px;
     margin: 10px 0;
-    border-radius: 7px 0 0 7px;
     border: 2px solid;
     border-color: #999 #000 #000 #999;
 }
@@ -128,11 +124,9 @@ const AbilitiesInfo = styled.div`
 
 const AbilitiesSub = styled.div`
     max-height: 130px;
-    scrollbar-color: #FFF #D8092E;
     overflow-y: auto;
     padding-left: 5px;
     border: 2px solid;
-    border-radius: 7px 0 0 7px;
     border-color: #999 #000 #000 #999;
 
 div {
@@ -149,4 +143,4 @@ p {
 }
 `;
 
-export { Section, Container, MainDetails, TypesOl, TypesDiv, DivOl, AbilitiesInfo, AbilitiesSub };
+export { Section, Container, DivImg, MainDetails, TypesOl, TypesDiv, DivOl, AbilitiesInfo, AbilitiesSub };

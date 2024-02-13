@@ -116,11 +116,6 @@ li:hover h2::after {
     content: none;
 }
 
-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 a {
     position: relative;
     display: flex;

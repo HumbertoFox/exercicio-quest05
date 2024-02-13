@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { urlApiFetchAbilities, urlApiFetchId, urlApiFetchImg } from "../../services/services";
 import { Link, useParams } from "react-router-dom";
-import { AbilitiesInfo, AbilitiesSub, Container, DivOl, MainDetails, Section, TypesDiv, TypesOl } from "../../components/styles/detailsstyle";
+import { AbilitiesInfo, AbilitiesSub, Container, DivImg, DivOl, MainDetails, Section, TypesDiv, TypesOl } from "../../components/styles/detailsstyle";
 import { CardPokemon } from "../../components/card/pokemoncard";
 
 export const Details = () => {
@@ -44,7 +44,9 @@ export const Details = () => {
         <Section>
             <h1>Pokémon Details</h1>
             <Container>
-                <CardPokemon name={pokemonId.name} />
+                <DivImg>
+                    <CardPokemon name={pokemonId.name} />
+                </DivImg>
                 <MainDetails>
                     <TypesOl>
                         <TypesDiv>
