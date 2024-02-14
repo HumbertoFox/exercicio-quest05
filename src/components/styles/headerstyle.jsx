@@ -19,4 +19,31 @@ const ImgPokeDex = styled.img`
     width: 200px;
 `;
 
-export { Header, ImgPoKeMoN, ImgPokeDex };
+const BtnToggle = styled.div`
+    width: 40px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background-color: #F50202;
+    padding: 1px;
+    border-radius: 25px;
+    cursor: pointer;
+
+svg {
+    width: 16px;
+}
+`;
+
+const SpanToggle = styled.span`
+    width: 18px;
+    height: 18px;
+    left: 1px;
+    position: absolute;
+    background-color: #FFF;
+    border-radius: 50%;
+`;
+
+export { Header, ImgPoKeMoN, ImgPokeDex, BtnToggle, SpanToggle };

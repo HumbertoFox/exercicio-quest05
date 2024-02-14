@@ -57,7 +57,6 @@ select {
     font-weight: bold;
     cursor: pointer;
 }
-
 select {
     width: 100px;
     text-align: center;
