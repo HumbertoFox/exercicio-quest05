@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Section = styled.section`
 
@@ -72,6 +72,43 @@ const UlList = styled.ul`
     flex-wrap: wrap;
     gap: 10px;
 
+    ${({ className }) => {
+        if (className.color === "#000") {
+            return css`
+                li {
+                    border: 3px solid #000;
+                }
+                li::before {
+                    background-color: #FFF;
+                    border-top: 4px solid #000;
+                }
+                li::after {
+                    border-bottom: 4px solid #000;
+                }
+                h2::after {
+                    background-color: #FFF;
+                    border: 15px solid #000;
+                }
+            `;
+        } else {
+            return css`
+                li {
+                    border: 3px solid #FFF;
+                }
+                li::before {
+                    background-color: #000;
+                    border-top: 4px solid #FFF;
+                }
+                li::after {
+                    border-bottom: 4px solid #FFF;
+                }
+                h2::after {
+                    background-color: #000;
+                    border: 15px solid #FFF;
+                }
+            `;
+        }
+    }}
 li {
     width: 230px;
     height: 230px;
@@ -81,8 +118,16 @@ li {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 3px solid #000;
     overflow: hidden;
+}
+li::before {
+    content: "";
+    width: 150%;
+    height: 53%;
+    bottom: 0;
+    position: absolute;
+    transition: .4s ease-in-out;
+    z-index: 1;
 }
 li::after {
     content: "";
@@ -91,19 +136,7 @@ li::after {
     top: 0;
     position: absolute;
     background-color: #F50002;
-    border-bottom: 4px solid #000;
     border-radius: 50%;
-    transition: .4s ease-in-out;
-    z-index: 1;
-}
-li::before {
-    content: "";
-    width: 150%;
-    height: 53%;
-    bottom: 0;
-    position: absolute;
-    background-color: #FFF;
-    border-top: 4px solid #000;
     transition: .4s ease-in-out;
     z-index: 1;
 }
@@ -111,7 +144,7 @@ li:hover::after {
     transform: translateY(-100%);
 }
 li:hover::before {
-    transform: translateY(100%);
+    transform: translateY(101%);
 }
 li:hover h2::after {
     content: none;
@@ -151,8 +184,6 @@ h2::after {
     top: 105px;
 	left: 50%;
 	transform: translate(-50%, -50%);
-    background-color: #FFF;
-    border: 15px solid #000;
     border-radius: 50%;
     z-index: 2;
 }

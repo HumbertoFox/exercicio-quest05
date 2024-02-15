@@ -12,7 +12,7 @@ var urlNext;
 export const Home = () => {
 
     const [pokemonList, setPokemonList] = useState(null);
-    const {theme, setTheme} = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
 
     const updateList = async () => {
         const resUrl = await axios.get(urlNext.next);
@@ -49,16 +49,16 @@ export const Home = () => {
     };
 
     return (
-        <Section>
+        <Section style={{color: theme.color, backgroundColor: theme.backgroundColor}}>
             <DivForm>
                 <FormSearchList pokemonSearchList={pokemonList} pokemon={newListPokemon} />
                 <SelectType pokeTypeSelectedList={pokeTypeList} />
             </DivForm>
-            <UlList>
+            <UlList className={theme}>
                 {
                     pokemonList.map((pokemonUnid, index) => {
                         return (
-                            <li key={index} className={theme}>
+                            <li key={index}>
                                 <CardPokemon name={pokemonUnid.name} />
                             </li>
                         );

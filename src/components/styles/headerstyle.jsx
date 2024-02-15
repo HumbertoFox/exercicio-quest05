@@ -42,22 +42,22 @@ const SpanToggle = styled.span`
     ${({ className }) => {
         if (className.color === "#FFF") {
             return css`
-                    width: 18px;
-                    height: 18px;
-                    left: 21px;
-                    position: absolute;
-                    background-color: #FFF;
-                    border-radius: 50%;
-                `;
+                width: 18px;
+                height: 18px;
+                left: 21px;
+                position: absolute;
+                background-color: #FFF;
+                border-radius: 50%;
+            `;
         } else {
             return css`
-                    width: 18px;
-                    height: 18px;
-                    left: 1px;
-                    position: absolute;
-                    background-color: #000;
-                    border-radius: 50%;
-                `;
+                width: 18px;
+                height: 18px;
+                left: 1px;
+                position: absolute;
+                background-color: #000;
+                border-radius: 50%;
+            `;
         }
     }}
 `;

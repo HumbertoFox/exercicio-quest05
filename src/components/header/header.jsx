@@ -11,7 +11,7 @@ export const HeaderPage = () => {
     const {theme, setTheme} = useContext(ThemeContext);
 
     return (
-        <Header>
+        <Header style={{color: theme.color, backgroundColor: theme.backgroundColor}}>
             <ImgPoKeMoN src="../../src/assets/images/pokemon-logo-png-1421.png" alt="Logo pokémon" />
             <ImgPokeDex src="../../src/assets/images/pokedex.png" alt="Logo Pokedex" />
             <BtnToggle>

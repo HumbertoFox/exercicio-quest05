@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import { urlApiFetchAbilities, urlApiFetchId, urlApiFetchImg } from "../../services/services";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { AbilitiesInfo, AbilitiesSub, Container, DivImg, DivOl, MainDetails, Section, TypesDiv, TypesOl } from "../../components/styles/detailsstyle";
+import { urlApiFetchAbilities, urlApiFetchId, urlApiFetchImg } from "../../services/services";
 import { CardPokemon } from "../../components/card/pokemoncard";
+import { ThemeContext } from "../../components/contexts/themecontext";
+import { AbilitiesInfo, AbilitiesSub, Container, DivImg, DivOl, MainDetails, Section, TypesDiv, TypesOl } from "../../components/styles/detailsstyle";
 
 export const Details = () => {
 
@@ -10,6 +11,7 @@ export const Details = () => {
     const [pokemonImg, setPokemonImg] = useState(null);
     const [pokemonMoves, setPokemonMoves] = useState([]);
     const [pokemonAbilities, setPokemonAbilities] = useState([]);
+    const { theme } = useContext(ThemeContext);
     const { id } = useParams();
 
     useEffect(() => {
@@ -41,7 +43,7 @@ export const Details = () => {
         return <Section>Loading...</Section>;
     }
     return (
-        <Section>
+        <Section style={{color: theme.color, backgroundColor: theme.backgroundColor}}>
             <h1>Pokémon Details</h1>
             <Container>
                 <DivImg>
