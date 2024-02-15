@@ -94,6 +94,7 @@ li::after {
     border-bottom: 4px solid #000;
     border-radius: 50%;
     transition: .4s ease-in-out;
+    z-index: 1;
 }
 li::before {
     content: "";
@@ -104,6 +105,7 @@ li::before {
     background-color: #FFF;
     border-top: 4px solid #000;
     transition: .4s ease-in-out;
+    z-index: 1;
 }
 li:hover::after {
     transform: translateY(-100%);
@@ -129,7 +131,6 @@ a:hover img:nth-child(2) {
 img:nth-child(1) {
     transform: scalex(-1);
     transition: .5s ease-in-out;
-    z-index: -1;
 }
 img:nth-child(2) {
     position: absolute;
@@ -153,7 +154,7 @@ h2::after {
     background-color: #FFF;
     border: 15px solid #000;
     border-radius: 50%;
-    z-index: 1;
+    z-index: 2;
 }
 `;
 

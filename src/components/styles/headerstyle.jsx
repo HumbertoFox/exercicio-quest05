@@ -40,7 +40,7 @@ svg {
 const SpanToggle = styled.span`
     transition: .3s ease-in-out;
     ${({ className }) => {
-        if (className === "dark") {
+        if (className.color === "#FFF") {
             return css`
                     width: 18px;
                     height: 18px;
