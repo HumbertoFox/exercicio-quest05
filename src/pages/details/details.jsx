@@ -38,7 +38,7 @@ export const Details = () => {
     }, [id]);
 
     if (!pokemonId || !pokemonImg || !pokemonMoves || !pokemonAbilities) {
-        return <div>Loading...</div>;
+        return <Section>Loading...</Section>;
     }
     return (
         <Section>

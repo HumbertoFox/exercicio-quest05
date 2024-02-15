@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Header = styled.header`
     position: relative;
@@ -38,12 +38,28 @@ svg {
 `;
 
 const SpanToggle = styled.span`
-    width: 18px;
-    height: 18px;
-    left: 1px;
-    position: absolute;
-    background-color: #FFF;
-    border-radius: 50%;
+    transition: .3s ease-in-out;
+    ${({ className }) => {
+        if (className === "dark") {
+            return css`
+                    width: 18px;
+                    height: 18px;
+                    left: 21px;
+                    position: absolute;
+                    background-color: #FFF;
+                    border-radius: 50%;
+                `;
+        } else {
+            return css`
+                    width: 18px;
+                    height: 18px;
+                    left: 1px;
+                    position: absolute;
+                    background-color: #FFF;
+                    border-radius: 50%;
+                `;
+        }
+    }}
 `;
 
 export { Header, ImgPoKeMoN, ImgPokeDex, BtnToggle, SpanToggle };

@@ -42,10 +42,11 @@ const DivImg = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20%;
-    padding: 5px;
+    gap: 30px;
+    padding: 0 15px;
     border: 3px solid;
     border-color: #999 #000 #000 #999;
+    border-radius: 0 15px 0 15px;
 a {
     display: flex;
     cursor: default;
