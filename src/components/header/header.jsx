@@ -10,21 +10,15 @@ export const HeaderPage = () => {
     
     const {theme, setTheme} = useContext(ThemeContext);
 
-    const toggleClick = () => {
-
-        if(theme === Themes.light) {
-            setTheme(Themes.dark)
-        } else {
-            setTheme(Themes.light)
-        };
-    };
-
     return (
         <Header>
             <ImgPoKeMoN src="../../src/assets/images/pokemon-logo-png-1421.png" alt="Logo pokémon" />
             <ImgPokeDex src="../../src/assets/images/pokedex.png" alt="Logo Pokedex" />
             <BtnToggle>
-                <SpanToggle onClick={() => toggleClick()} className={theme} />
+                <SpanToggle onClick={() => theme === Themes.light ?
+                    setTheme(Themes.dark) :
+                    setTheme(Themes.light)}
+                    className={theme} />
                 <FontAwesomeIcon icon={["fas", "sun"]} />
                 <FontAwesomeIcon icon={["fas", "moon"]} />
             </BtnToggle>

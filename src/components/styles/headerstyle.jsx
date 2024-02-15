@@ -55,7 +55,7 @@ const SpanToggle = styled.span`
                     height: 18px;
                     left: 1px;
                     position: absolute;
-                    background-color: #FFF;
+                    background-color: #000;
                     border-radius: 50%;
                 `;
         }

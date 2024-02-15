@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { DivForm, Section, UlList } from "../../components/styles/homestyle"
+import { ThemeContext } from "../../components/contexts/themecontext";
 import { urlApiFetch } from "../../services/services";
 import { CardPokemon } from "../../components/card/pokemoncard";
 import { FormSearchList } from "../../components/form/inputs";
@@ -11,6 +12,7 @@ var urlNext;
 export const Home = () => {
 
     const [pokemonList, setPokemonList] = useState(null);
+    const {theme, setTheme} = useContext(ThemeContext);
 
     const updateList = async () => {
         const resUrl = await axios.get(urlNext.next);
@@ -56,7 +58,7 @@ export const Home = () => {
                 {
                     pokemonList.map((pokemonUnid, index) => {
                         return (
-                            <li key={index}>
+                            <li key={index} className={theme}>
                                 <CardPokemon name={pokemonUnid.name} />
                             </li>
                         );
