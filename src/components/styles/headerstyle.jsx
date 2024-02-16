@@ -5,6 +5,7 @@ const Header = styled.header`
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    transition: .4s ease-in-out;
 `;
 
 const ImgPoKeMoN = styled.img`
@@ -32,31 +33,27 @@ const BtnToggle = styled.div`
     border-radius: 25px;
     cursor: pointer;
 
-svg {
-    width: 16px;
-}
+    svg {
+        width: 16px;
+    }
 `;
 
 const SpanToggle = styled.span`
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    border-radius: 50%;
     transition: .3s ease-in-out;
     ${({ className }) => {
         if (className.color === "#FFF") {
             return css`
-                width: 18px;
-                height: 18px;
                 left: 21px;
-                position: absolute;
                 background-color: #FFF;
-                border-radius: 50%;
             `;
         } else {
             return css`
-                width: 18px;
-                height: 18px;
                 left: 1px;
-                position: absolute;
                 background-color: #000;
-                border-radius: 50%;
             `;
         }
     }}

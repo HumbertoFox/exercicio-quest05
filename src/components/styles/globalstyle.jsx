@@ -8,20 +8,17 @@ export const GlobalStyleis = createGlobalStyle`
     border: none;
     background: none;
   }
-
-  body {
+  #root {
     min-width: 375px;
     min-height: 100vh;
   }
-  
+
   ul {
     list-style: none;
   }
-
   a {
     text-decoration: none;
   }
-
   button {
     cursor: pointer;
   }
