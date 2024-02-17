@@ -65,7 +65,9 @@ export const Home = () => {
                     })
                 }
             </UlList>
-            <ButtonNext onClick={() => updateList()}>{"Load More"}</ButtonNext>
+            <ButtonNext onClick={() => updateList()}>
+                {"Load More"}
+            </ButtonNext>
         </Section>
     );
 };

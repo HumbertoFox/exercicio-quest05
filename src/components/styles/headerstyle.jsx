@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 
 const Header = styled.header`
     position: relative;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 10px;

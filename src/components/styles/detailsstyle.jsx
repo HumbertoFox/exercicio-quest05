@@ -1,6 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Section = styled.section`
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,6 +39,20 @@ const Container = styled.div`
     border: 6px solid;
     border-color: #999 #000 #000 #999;
     box-shadow: 10px 10px 10px #999;
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #999;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #666;
+    }
 `;
 
 const DivImg = styled.div`

@@ -1,13 +1,15 @@
 import styled, { css } from "styled-components";
 
 const Section = styled.section`
+    height: 100%;
     transition: .4s ease-in-out;
+    
     button {
         display: block;
         font-size: 15px;
         font-weight: bold;
         color: #0202F5;
-        padding: 10px;
+        padding: 15px 10px;
         margin: 0 auto;
         transition: .3s ease-in-out;
     }
@@ -35,7 +37,6 @@ const DivForm = styled.div`
         width: 270px;
         padding: 0 10px 0 26px;
         border: 1px solid;
-        border-color: #999 #000 #000 #999;
         border-radius: 5px;
     }
     input[type=submit] {
@@ -44,9 +45,10 @@ const DivForm = styled.div`
         background-color: #F50002;
         border-radius: 5px;
         border: 1px solid;
-        border-color: #999 #000 #000 #999;
     }
-    input[type=submit]:active {
+    input[type=submit]:active,
+    input[type=search]:focus,
+    select:focus {
         border-color: #000 #999 #999 #000;
     }
     input[type=search],
@@ -55,6 +57,7 @@ const DivForm = styled.div`
         height: 35px;
         font-size: 14px;
         font-weight: bold;
+        border-color: #999 #000 #000 #999;
         cursor: pointer;
     }
     select {
@@ -62,7 +65,6 @@ const DivForm = styled.div`
         text-align: center;
         border-radius: 5px;
         border: 1px solid;
-        border-color: #999 #000 #000 #999;
     }
 `;
 

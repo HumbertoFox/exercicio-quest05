@@ -25,4 +25,4 @@ const ThemeProvider = (props) => {
     )
 };
 
-export { ThemeContext, Themes, ThemeProvider };
+export { Themes, ThemeContext, ThemeProvider };
