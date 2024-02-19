@@ -12,6 +12,7 @@ var urlNext;
 export const Home = () => {
 
     const [pokemonList, setPokemonList] = useState(null);
+    const [listTypeSelected, setListTypeSelected] = useState([]);
     const { theme } = useContext(ThemeContext);
 
     const updateList = async () => {
@@ -25,10 +26,9 @@ export const Home = () => {
     };
 
     function pokeTypeList(pokeListType) {
-        let limitList = 10;
         if (pokeListType !== null) {
-            const selectNewListType = pokeListType;
-            const response = selectNewListType.slice(0, limitList)
+            setListTypeSelected(pokeListType);
+            const response = pokeListType.slice(0, 10);
             setPokemonList(response);
         };
     };
@@ -49,12 +49,12 @@ export const Home = () => {
     };
 
     return (
-        <Section style={{color: theme.color, backgroundColor: theme.backgroundColor}}>
+        <Section style={{color: theme.color, backgroundColor: theme.backgroundColor}} className={theme.color}>
             <DivForm>
                 <FormSearchList pokemonSearchList={pokemonList} pokemon={newListPokemon} />
                 <SelectType pokeTypeSelectedList={pokeTypeList} />
             </DivForm>
-            <UlList className={theme}>
+            <UlList className={theme.color}>
                 {
                     pokemonList.map((pokemonUnid, index) => {
                         return (

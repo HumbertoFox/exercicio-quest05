@@ -24,6 +24,15 @@ const Section = styled.section`
         margin-top: 15px;
         transition: .3s ease-in-out;
     }
+    ${({ className }) => {
+        if (className === "#FFF") {
+            return css`
+                a:nth-child(3) {
+                    color: #FFF;
+                }
+            `;
+        }
+    }};
     a:nth-child(3):hover {
         text-shadow: 0 0 2px #F5F502;
         transform: scale(1.1);

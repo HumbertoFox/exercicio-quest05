@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 const Section = styled.section`
     height: 100%;
     transition: .4s ease-in-out;
-    
+
     button {
         display: block;
         font-size: 15px;
@@ -13,6 +13,15 @@ const Section = styled.section`
         margin: 0 auto;
         transition: .3s ease-in-out;
     }
+
+    ${({ className }) => {
+        if (className === "#FFF")
+        return css`
+            button {
+                color: #FFF;
+            }
+        `;
+    }};
 button:hover {
     text-shadow: 0 0 2px #F5F502;
     transform: scale(1.1);
@@ -153,7 +162,7 @@ const UlList = styled.ul`
         z-index: 2;
     }
     ${({ className }) => {
-        if (className.color === "#000") {
+        if (className === "#000") {
             return css`
                 li {
                     border: 3px solid #000;

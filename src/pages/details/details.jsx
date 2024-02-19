@@ -43,7 +43,7 @@ export const Details = () => {
         return <Section>Loading...</Section>;
     }
     return (
-        <Section style={{color: theme.color, backgroundColor: theme.backgroundColor}}>
+        <Section style={{color: theme.color, backgroundColor: theme.backgroundColor}}  className={theme.color}>
             <h1>Pokémon Details</h1>
             <Container>
                 <DivImg>
