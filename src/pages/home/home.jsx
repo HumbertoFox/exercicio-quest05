@@ -8,6 +8,7 @@ import { ButtonNext } from "../../components/button/buttonnext";
 import { SelectType } from "../../components/form/selects";
 import axios from "axios";
 var urlNext;
+var increment;
 
 export const Home = () => {
 
@@ -26,10 +27,25 @@ export const Home = () => {
     };
 
     function pokeTypeList(pokeListType) {
+        increment = 10;
         if (pokeListType !== null) {
             setListTypeSelected(pokeListType);
             const response = pokeListType.slice(0, 10);
             setPokemonList(response);
+        };
+    };
+
+    function listTypeSelect() {
+        if (increment === listTypeSelected.length) {
+            alert("Pokemon type limit, please select another type...")
+        };
+        increment += 10;
+        if (listTypeSelected.length !== increment) {
+            const response = listTypeSelected.slice(0, increment);
+            setPokemonList(response);
+            if (listTypeSelected.length < increment) {
+                increment = listTypeSelected.length;
+            };
         };
     };
 
@@ -49,7 +65,7 @@ export const Home = () => {
     };
 
     return (
-        <Section style={{color: theme.color, backgroundColor: theme.backgroundColor}} className={theme.color}>
+        <Section style={{ color: theme.color, backgroundColor: theme.backgroundColor }} className={theme.color}>
             <DivForm>
                 <FormSearchList pokemonSearchList={pokemonList} pokemon={newListPokemon} />
                 <SelectType pokeTypeSelectedList={pokeTypeList} />
@@ -65,7 +81,7 @@ export const Home = () => {
                     })
                 }
             </UlList>
-            <ButtonNext onClick={() => updateList()}>
+            <ButtonNext onClick={listTypeSelected.length === 10 || listTypeSelected.length === 0 ? () => updateList() : () => listTypeSelect()}>
                 {"Load More"}
             </ButtonNext>
         </Section>
