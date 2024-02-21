@@ -16,6 +16,10 @@ export const Home = () => {
     const [listTypeSelected, setListTypeSelected] = useState([]);
     const { theme } = useContext(ThemeContext);
 
+    const urlApiGet = async () => {
+        urlNext = await urlApiFetch();
+    };
+
     const updateList = async () => {
         const resUrl = await axios.get(urlNext.next);
         urlNext = await resUrl.data;
@@ -28,10 +32,14 @@ export const Home = () => {
 
     function pokeTypeList(pokeListType) {
         increment = 10;
+
         if (pokeListType !== null) {
             setListTypeSelected(pokeListType);
-            const response = pokeListType.slice(0, 10);
+            const response = pokeListType.slice(0, increment);
             setPokemonList(response);
+            if (pokeListType.length === 10) {
+                urlApiGet();
+            };
         };
     };
 
@@ -39,7 +47,9 @@ export const Home = () => {
         if (increment === listTypeSelected.length) {
             alert("Pokemon type limit, please select another type...")
         };
+
         increment += 10;
+
         if (listTypeSelected.length !== increment) {
             const response = listTypeSelected.slice(0, increment);
             setPokemonList(response);
@@ -55,6 +65,7 @@ export const Home = () => {
             const response = await urlNext.results;
             setPokemonList(response);
         };
+
         getfetch();
     }, []);
 
