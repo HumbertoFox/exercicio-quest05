@@ -77,7 +77,7 @@ export const Home = () => {
 
     return (
         <Section style={{ color: theme.color, backgroundColor: theme.backgroundColor }} className={theme.color}>
-            <DivForm>
+            <DivForm className={theme.color}>
                 <FormSearchList pokemonSearchList={pokemonList} pokemon={newListPokemon} />
                 <SelectType pokeTypeSelectedList={pokeTypeList} />
             </DivForm>

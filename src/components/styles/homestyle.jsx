@@ -16,7 +16,7 @@ const Section = styled.section`
 
     ${({ className }) => {
         if (className === "#FFF")
-        return css`
+            return css`
             button {
                 color: #FFF;
             }
@@ -41,6 +41,7 @@ const DivForm = styled.div`
     }
     svg {
         margin-right: -32px;
+        z-index: 1;
     }
     input[type=search] {
         width: 170px;
@@ -75,6 +76,25 @@ const DivForm = styled.div`
         border-radius: 5px;
         border: 1px solid;
     }
+    ${({ className }) => {
+        if (className === "#000") {
+            return css`
+                input[type=search],
+                select {
+                    color: #000;
+                    background-color: #FFF;
+                }
+            `;
+        } else {
+            return css`
+                input[type=search],
+                select {
+                    color: #FFF;
+                    background-color: #333;
+                }
+            `;
+        }
+    }}
 `;
 
 const UlList = styled.ul`
@@ -159,6 +179,7 @@ const UlList = styled.ul`
     	transform: translate(-50%, -50%);
         border-radius: 50%;
         z-index: 2;
+        transition: .4s ease-in-out;
     }
     ${({ className }) => {
         if (className === "#000") {
