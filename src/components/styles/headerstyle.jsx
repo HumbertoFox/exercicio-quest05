@@ -11,6 +11,10 @@ const Header = styled.header`
 
 const ImgPoKeMoN = styled.img`
     width: 100px;
+
+    @media(max-width: 420px) {
+        width: 75px;
+    }
 `;
 
 const ImgPokeDex = styled.img`
@@ -19,6 +23,10 @@ const ImgPokeDex = styled.img`
     left: 50%;
 	transform: translate(-50%, -50%);
     width: 200px;
+
+    @media(max-width: 420px) {
+        width: 150px;
+    }
 `;
 
 const BtnToggle = styled.div`
@@ -37,6 +45,10 @@ const BtnToggle = styled.div`
     svg {
         width: 16px;
     }
+
+    @media(max-width: 420px) {
+        margin: auto 0;
+    }
 `;
 
 const SpanToggle = styled.span`
@@ -45,6 +57,7 @@ const SpanToggle = styled.span`
     position: absolute;
     border-radius: 50%;
     transition: .3s ease-in-out;
+
     ${({ className }) => {
         if (className.color === "#FFF") {
             return css`
