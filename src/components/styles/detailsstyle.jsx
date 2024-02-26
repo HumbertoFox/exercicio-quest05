@@ -45,8 +45,8 @@ const Container = styled.div`
     gap: 10px;
     padding: 5px;
     margin-top: 10px;
-    border: 6px solid;
-    border-color: #999 #000 #000 #999;
+    border: 1px solid #999;
+    border-radius: 0 20px;
     box-shadow: 10px 10px 10px #999;
 
     ::-webkit-scrollbar {
@@ -62,6 +62,11 @@ const Container = styled.div`
     ::-webkit-scrollbar-thumb:hover {
         background: #666;
     }
+
+    @media(max-width: 620px) {
+        max-width: 350px;
+        flex-direction: column;
+    }
 `;
 
 const DivImg = styled.div`
@@ -69,10 +74,10 @@ const DivImg = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    padding: 0 15px;
-    border: 3px solid;
-    border-color: #999 #000 #000 #999;
-    border-radius: 0 15px 0 15px;
+    padding: 5px 15px;
+    border: 1px solid #999;
+    border-radius: 0 15px;
+
     a {
         display: flex;
         cursor: default;
@@ -86,21 +91,29 @@ const DivImg = styled.div`
 `;
 
 const MainDetails = styled.div`
+    display: flex;
     padding: 5px;
-    border: 3px solid;
-    border-color: #999 #000 #000 #999;
+    gap: 5px;
+    border: 1px solid #999;
+    border-radius: 0 15px;
+
+    @media(max-width: 620px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 const TypesOl = styled.div`
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 `;
 
 const TypesDiv = styled.div`
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 5px;
 
     div {
         display: flex;
@@ -112,9 +125,8 @@ const TypesDiv = styled.div`
         font-weight: 400;
         text-transform: capitalize;
         padding: 5px 10px;
-        border: 2px solid;
-        border-color: #999 #000 #000 #999;
-        border-radius: 5px;
+        border: 1px solid #999;
+        border-radius: 0 5px;
     }
 
 `;
@@ -132,9 +144,6 @@ const DivOl = styled.div`
         gap: 5px;
         overflow-y: auto;
         padding: 10px 0 10px 30px;
-        margin: 10px 0;
-        border: 2px solid;
-        border-color: #999 #000 #000 #999;
     }
     li {
         text-align: start;
@@ -145,16 +154,16 @@ const DivOl = styled.div`
 `;
 
 const AbilitiesInfo = styled.div`
+    max-height: 310px;
     display: flex;
     flex-direction: column;
 `;
 
 const AbilitiesSub = styled.div`
-    max-height: 130px;
+    height: 100%;
     overflow-y: auto;
     padding-left: 5px;
-    border: 2px solid;
-    border-color: #999 #000 #000 #999;
+    border-left: 1px solid #999;
 
     div {
         display: flex;
@@ -167,6 +176,10 @@ const AbilitiesSub = styled.div`
     }
     p {
         font-size: 12px;
+    }
+
+    @media(max-width: 620px) {
+        border-left: 0;
     }
 `;
 

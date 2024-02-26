@@ -8,6 +8,7 @@ export const GlobalStyleis = createGlobalStyle`
     border: none;
     background: none;
   }
+  
   body {
     min-width: 375px;
     display: flex;

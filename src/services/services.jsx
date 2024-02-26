@@ -15,9 +15,10 @@ const urlApiFetchImg = async (name) => {
     const urlName = await axios.get(`${URL_API}pokemon/${name}`);
     const urlData = await urlName.data;
     const urlSprites = await urlData.sprites;
-    const urlOther = await urlSprites.other;
-    const urlShowdown = await urlOther.showdown;
-    return await urlShowdown;
+    // const urlOther = await urlSprites.other;
+    // const urlShowdown = await urlOther.showdown;
+    // return await urlShowdown;
+    return await urlSprites
 };
 
 const urlApiFetchType = async () => {
