@@ -20,9 +20,8 @@ const Section = styled.section`
     a:nth-child(3) {
         font-size: 15px;
         font-weight: bold;
-        color: #0202F5;
         margin-top: 15px;
-        transition: .3s ease-in-out;
+        transition: .4s ease-in-out;
     }
     ${({ className }) => {
         if (className === "#FFF") {
@@ -31,7 +30,13 @@ const Section = styled.section`
                     color: #FFF;
                 }
             `;
-        }
+        } else {
+            return css`
+                a:nth-child(3) {
+                    color: #0202F5;
+                }
+            `;
+        };
     }};
     a:nth-child(3):hover {
         text-shadow: 0 0 2px #F5F502;
@@ -91,6 +96,7 @@ const DivImg = styled.div`
 `;
 
 const MainDetails = styled.div`
+    width: 100%;
     display: flex;
     padding: 5px;
     gap: 5px;

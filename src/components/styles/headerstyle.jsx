@@ -56,7 +56,7 @@ const SpanToggle = styled.span`
     height: 18px;
     position: absolute;
     border-radius: 50%;
-    transition: .3s ease-in-out;
+    transition: .4s ease-in-out;
 
     ${({ className }) => {
         if (className.color === "#FFF") {
@@ -69,8 +69,8 @@ const SpanToggle = styled.span`
                 left: 1px;
                 background-color: #000;
             `;
-        }
-    }}
+        };
+    }};
 `;
 
 export { Header, ImgPoKeMoN, ImgPokeDex, BtnToggle, SpanToggle };

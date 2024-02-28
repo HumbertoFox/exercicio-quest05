@@ -8,24 +8,31 @@ const Section = styled.section`
         display: block;
         font-size: 15px;
         font-weight: bold;
-        color: #0202F5;
         padding: 15px 10px;
         margin: 0 auto;
-        transition: .3s ease-in-out;
+        transition: .4s ease-in-out;
     }
 
     ${({ className }) => {
-        if (className === "#FFF")
+        if (className === "#FFF") {
             return css`
-            button {
-                color: #FFF;
-            }
-        `;
+                button {
+                    color: #FFF;
+                } 
+            `;
+        } else {
+            return css`
+                button {
+                    color: #0202F5;
+                }
+            `;
+        };
     }};
-button:hover {
-    text-shadow: 0 0 2px #F5F502;
-    transform: scale(1.1);
-}
+
+    button:hover {
+        text-shadow: 0 0 2px #F5F502;
+        transform: scale(1.1);
+    }
 `;
 
 const DivForm = styled.div`
@@ -69,6 +76,7 @@ const DivForm = styled.div`
         font-weight: bold;
         border-color: #999 #000 #000 #999;
         cursor: pointer;
+        transition: .4s ease-in-out;
     }
     select {
         width: 90px;
@@ -93,8 +101,8 @@ const DivForm = styled.div`
                     background-color: #333;
                 }
             `;
-        }
-    }}
+        };
+    }};
 `;
 
 const UlList = styled.ul`
@@ -216,8 +224,8 @@ const UlList = styled.ul`
                     border: 20px solid #FFF;
                 }
             `;
-        }
-    }}
+        };
+    }};
 `;
 
 export { Section, DivForm, UlList };

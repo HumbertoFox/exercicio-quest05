@@ -38,7 +38,7 @@ const urlApiFetchTypeSelected = async (typeSelected) => {
 const urlApiFetchAbilities = async (name) => {
     const urlAbilitiesPokemon = await axios.get(`${URL_API}ability/${name}`);
     const abilitiesData = urlAbilitiesPokemon.data;
-    const response = await abilitiesData.effect_entries.filter(results => results.language.name === "en");
+    const response = abilitiesData.flavor_text_entries.filter(results => results.language.name === "en")
     return await response;
 };
 

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { urlApiFetchAbilities, urlApiFetchId, urlApiFetchImg } from "../../services/services";
+import { urlApiFetchAbilities, urlApiFetchId } from "../../services/services";
 import { CardPokemon } from "../../components/card/pokemoncard";
 import { ThemeContext } from "../../components/contexts/themecontext";
 import { AbilitiesInfo, AbilitiesSub, Container, DivImg, DivOl, MainDetails, Section, TypesDiv, TypesOl } from "../../components/styles/detailsstyle";
@@ -8,7 +8,6 @@ import { AbilitiesInfo, AbilitiesSub, Container, DivImg, DivOl, MainDetails, Sec
 export const Details = () => {
 
     const [pokemonId, setPokemonId] = useState(null);
-    const [pokemonImg, setPokemonImg] = useState(null);
     const [pokemonMoves, setPokemonMoves] = useState([]);
     const [pokemonAbilities, setPokemonAbilities] = useState([]);
     const { theme } = useContext(ThemeContext);
@@ -18,30 +17,29 @@ export const Details = () => {
         const fetchData = async () => {
             try {
                 const idData = await urlApiFetchId(id);
-                const imgData = await urlApiFetchImg(id);
                 const movesData = idData.moves;
                 const abilitiesData = idData.abilities.map(async (ability) => {
                     const abilityDetails = await urlApiFetchAbilities(ability.ability.name);
+                    const fillLength = abilityDetails.length -1;
                     return {
                         name: ability.ability.name,
-                        effect: abilityDetails[0].effect,
-                        shortEffect: abilityDetails[0].short_effect
+                        flavor_text: abilityDetails[fillLength].flavor_text
                     };
                 });
                 setPokemonId(idData);
-                setPokemonImg(imgData);
                 setPokemonMoves(movesData);
                 setPokemonAbilities(await Promise.all(abilitiesData));
             } catch (error) {
                 console.error("Error fetching data:", error);
-            }
+            };
         };
         fetchData();
     }, [id]);
 
-    if (!pokemonId || !pokemonImg || !pokemonMoves || !pokemonAbilities) {
+    if (!pokemonId || !pokemonMoves || !pokemonAbilities) {
         return <Section>Loading...</Section>;
-    }
+    };
+
     return (
         <Section style={{color: theme.color, backgroundColor: theme.backgroundColor}}  className={theme.color}>
             <h1>Pokémon Details</h1>
@@ -75,9 +73,8 @@ export const Details = () => {
                         <AbilitiesSub>
                             {pokemonAbilities.map((ability, index) => (
                                 <div key={index}>
-                                    <h3 className="h3-abilit">{ability.name}</h3>
-                                    <p>{ability.effect}</p>
-                                    <p>{ability.shortEffect}</p>
+                                    <h3>{ability.name}</h3>
+                                    <p>{ability.flavor_text}</p>
                                 </div>
                             ))}
                         </AbilitiesSub>
