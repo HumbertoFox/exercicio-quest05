@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { urlApiFetchAbilities, urlApiFetchId } from "../../services/services";
 import { CardPokemon } from "../../components/card/pokemoncard";
 import { ThemeContext } from "../../components/contexts/themecontext";
-import { AbilitiesInfo, AbilitiesSub, Container, DivImg, DivOl, MainDetails, Section, TypesDiv, TypesOl } from "../../components/styles/detailsstyle";
+import { AbilitiesInfo, AbilitiesSub, Container, DivImg, DivOl, MainDetails, Section, TypesDiv, TypeH3, TypesOl } from "../../components/styles/detailsstyle";
 
 export const Details = () => {
 
@@ -53,7 +53,7 @@ export const Details = () => {
                             <h2>Types</h2>
                             <div>
                                 {pokemonId.types.map((types, index) => (
-                                    <h3 key={index}>{types.type.name}</h3>
+                                    <TypeH3 className={types.type.name} key={index}>{types.type.name}</TypeH3>
                                 ))}
                             </div>
                         </TypesDiv>

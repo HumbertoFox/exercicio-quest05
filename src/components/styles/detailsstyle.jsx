@@ -126,15 +126,92 @@ const TypesDiv = styled.div`
         flex-wrap: wrap;
         gap: 5px;
     }
-    h3 {
-        font-size: 13px;
-        font-weight: 400;
-        text-transform: capitalize;
-        padding: 5px 10px;
-        border: 1px solid #999;
-        border-radius: 0 5px;
-    }
+`;
 
+const TypeH3 = styled.h3`
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 5px 10px;
+    border: 1px solid #999;
+    border-radius: 0 5px;
+
+    ${({ className }) => {
+        if (className === "normal") {
+            return css`
+                background-color: #a8a878;
+            `;
+        } else if (className === "fighting") {
+            return css`
+                background-color: #903028;
+            `;
+        } else if (className === "flying") {
+            return css`
+                background-color: #a890f0;
+            `;
+        } else if (className === "poison") {
+            return css`
+                background-color: #a040a0;
+            `;
+        } else if (className === "ground") {
+            return css`
+                background-color: #e0c068;
+            `;
+        } else if (className === "rock") {
+            return css`
+                background-color: #b8a038;
+            `;
+        } else if (className === "bug") {
+            return css`
+                background-color: #a8b820;
+            `;
+        } else if (className === "ghost") {
+            return css`
+                background-color: #705898;
+            `;
+        } else if (className === "steel") {
+            return css`
+                background-color: #b8b8d0;
+            `;
+        } else if (className === "fire") {
+            return css`
+                background-color: #f05030;
+            `;
+        } else if (className === "water") {
+            return css`
+                background-color: #6890f0;
+            `;
+        } else if (className === "grass") {
+            return css`
+                background-color: #78c850;
+            `;
+        } else if (className === "electric") {
+            return css`
+                background-color: #f8d030;
+            `;
+        } else if (className === "psychic") {
+            return css`
+                background-color: #f85888;
+            `;
+        } else if (className === "ice") {
+            return css`
+                background-color: #98d8d8;
+            `;
+        } else if (className === "dragon") {
+            return css`
+                background-color: #7038f8;
+            `;
+        } else if (className === "dark") {
+            return css`
+                background-color: #705848;
+            `;
+        } else if (className === "fairy") {
+            return css`
+                background-color: #68a090;
+            `;
+        }
+
+    }}
 `;
 
 const DivOl = styled.div`
@@ -189,4 +266,4 @@ const AbilitiesSub = styled.div`
     }
 `;
 
-export { Section, Container, DivImg, MainDetails, TypesOl, TypesDiv, DivOl, AbilitiesInfo, AbilitiesSub };
+export { Section, Container, DivImg, MainDetails, TypesOl, TypesDiv, TypeH3, DivOl, AbilitiesInfo, AbilitiesSub };

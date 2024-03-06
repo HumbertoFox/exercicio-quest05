@@ -1,4 +1,16 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+const move = keyframes`
+    0% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(-10deg)
+    }
+`;
 
 const Section = styled.section`
     height: 100%;
@@ -121,6 +133,7 @@ const UlList = styled.ul`
         justify-content: center;
         border-radius: 50%;
         overflow: hidden;
+        /* animation: ${move} .2s linear infinite alternate; */
     }
     li::before {
         content: "";
@@ -140,6 +153,9 @@ const UlList = styled.ul`
         background-color: #F50002;
         transition: .4s ease-in-out;
         z-index: 1;
+    }
+    li:hover {
+        animation: none;
     }
     li:hover::after {
         transform: translateY(-100%);
