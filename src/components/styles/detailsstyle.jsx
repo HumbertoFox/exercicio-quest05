@@ -46,6 +46,7 @@ const Section = styled.section`
 
 const Container = styled.div`
     width: 570px;
+    min-height: 310px;
     display: flex;
     gap: 10px;
     padding: 5px;
@@ -81,7 +82,7 @@ const DivImg = styled.div`
     gap: 30px;
     padding: 5px 15px;
     border: 1px solid #999;
-    border-radius: 0 15px;
+    border-radius: 0 15px 15px 15px;
 
     a {
         display: flex;
@@ -93,6 +94,10 @@ const DivImg = styled.div`
     img:last-child {
         display: block;
     }
+
+    @media(max-width: 620px) {
+        border-radius: 0 15px 15px 15px;
+    }
 `;
 
 const MainDetails = styled.div`
@@ -101,7 +106,7 @@ const MainDetails = styled.div`
     padding: 5px;
     gap: 5px;
     border: 1px solid #999;
-    border-radius: 0 15px;
+    border-radius: 15px 15px 0 15px;
 
     @media(max-width: 620px) {
         flex-direction: column;
