@@ -2,13 +2,13 @@ import styled, { css, keyframes } from "styled-components";
 
 const move = keyframes`
     0% {
-        transform: rotate(10deg);
+        transform: rotate(5deg);
     }
     50% {
         transform: rotate(0deg)
     }
     100% {
-        transform: rotate(-10deg)
+        transform: rotate(-5deg)
     }
 `;
 
@@ -133,7 +133,7 @@ const UlList = styled.ul`
         justify-content: center;
         border-radius: 50%;
         overflow: hidden;
-        /* animation: ${move} .2s linear infinite alternate; */
+        animation: ${move} .3s 2s linear infinite alternate;
     }
     li::before {
         content: "";

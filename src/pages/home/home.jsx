@@ -70,7 +70,7 @@ export const Home = () => {
 
     if (pokemonList === null) {
         return (
-            <span>-</span>
+            <span>Loading...</span>
         );
     };
 
