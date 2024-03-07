@@ -7,8 +7,7 @@ import { FormSearchList } from "../../components/form/inputs";
 import { ButtonNext } from "../../components/button/buttonnext";
 import { SelectType } from "../../components/form/selects";
 import axios from "axios";
-var urlNext;
-var increment;
+var urlNext, increment;
 
 export const Home = () => {
 
