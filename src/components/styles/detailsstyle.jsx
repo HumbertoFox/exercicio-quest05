@@ -242,7 +242,6 @@ const DivOl = styled.div`
 `;
 
 const AbilitiesInfo = styled.div`
-    max-height: 310px;
     display: flex;
     flex-direction: column;
 `;
