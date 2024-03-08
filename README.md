@@ -6,13 +6,12 @@ Mostrar uma lista de pokemon e ao clicar no Pokemon mostrar alguns detalhes do p
 
 ## Funcionalidade da Aplicação
 
-Mostrar uma lista de Pokemon com 10 pokemons mostrando o nome e a imagem do pokemon 
+Mostrar uma lista de Pokemon com 10 pokemons, com o nome e a imagem do pokemon 
 ao clicar no botão "Load More" carrega mais 10 pokemons.
 Menu com pesquisar pokemon por nome na lista mostrada,
 Menu mostrando todos os tipos de pokemon ao selecionar mostra 10 pokemons do tipo selecionado,
 o botão "Load More" carrega mais 10 do tipo selecionado.
-Ao clicar no Pokemon mostrar alguns detalhes como imagem, nome, lista de movimentos e lista de habilidades
-com o nome e descrição da mesma.
+Ao clicar no Pokemon mostrar alguns detalhes como imagem, nome, lista de movimentos e uma lista de habilidades com o nome e descrição da mesma.
 
 ### React + Vite
 ### npm install react-hook-form
