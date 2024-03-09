@@ -12,6 +12,9 @@ Menu com pesquisar pokemon por nome na lista mostrada,
 Menu mostrando todos os tipos de pokemon ao selecionar mostra 10 pokemons do tipo selecionado,
 o botão "Load More" carrega mais 10 do tipo selecionado.
 Ao clicar no Pokemon mostrar alguns detalhes como imagem, nome, lista de movimentos e uma lista de habilidades com o nome e descrição da mesma.
+Conter um botão para mudar de tema light "claro" e dark "escuro".
+
+## Compnentes usados para funcionamento da aplicação!
 
 ### React + Vite
 ### npm install react-hook-form
