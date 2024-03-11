@@ -144,7 +144,7 @@ const TypeH3 = styled.h3`
     ${({ className }) => {
         if (className === "normal") {
             return css`
-                background-color: #a8a878;
+                background-color: #A8A878;
             `;
         } else if (className === "fighting") {
             return css`
@@ -152,23 +152,23 @@ const TypeH3 = styled.h3`
             `;
         } else if (className === "flying") {
             return css`
-                background-color: #a890f0;
+                background-color: #A890F0;
             `;
         } else if (className === "poison") {
             return css`
-                background-color: #a040a0;
+                background-color: #A040A0;
             `;
         } else if (className === "ground") {
             return css`
-                background-color: #e0c068;
+                background-color: #E0C068;
             `;
         } else if (className === "rock") {
             return css`
-                background-color: #b8a038;
+                background-color: #B8A038;
             `;
         } else if (className === "bug") {
             return css`
-                background-color: #a8b820;
+                background-color: #A8B820;
             `;
         } else if (className === "ghost") {
             return css`
@@ -176,35 +176,35 @@ const TypeH3 = styled.h3`
             `;
         } else if (className === "steel") {
             return css`
-                background-color: #b8b8d0;
+                background-color: #B8B8D0;
             `;
         } else if (className === "fire") {
             return css`
-                background-color: #f05030;
+                background-color: #F05030;
             `;
         } else if (className === "water") {
             return css`
-                background-color: #6890f0;
+                background-color: #6890F0;
             `;
         } else if (className === "grass") {
             return css`
-                background-color: #78c850;
+                background-color: #78C850;
             `;
         } else if (className === "electric") {
             return css`
-                background-color: #f8d030;
+                background-color: #F8D030;
             `;
         } else if (className === "psychic") {
             return css`
-                background-color: #f85888;
+                background-color: #F85888;
             `;
         } else if (className === "ice") {
             return css`
-                background-color: #98d8d8;
+                background-color: #98D8D8;
             `;
         } else if (className === "dragon") {
             return css`
-                background-color: #7038f8;
+                background-color: #7038F8;
             `;
         } else if (className === "dark") {
             return css`
@@ -212,7 +212,7 @@ const TypeH3 = styled.h3`
             `;
         } else if (className === "fairy") {
             return css`
-                background-color: #68a090;
+                background-color: #68A090;
             `;
         }
 
