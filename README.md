@@ -36,12 +36,13 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 
 </div>
 
-### React + Vite
+### npm install React + Vite
 ### npm install react-hook-form
 ### npm install react-router-dom
 ### npm install styled-components
-### npm i --save axios
-### npm i --save @fortawesome/fontawesome-svg-core
-### npm i --save @fortawesome/free-solid-svg-icons
-### npm i --save @fortawesome/react-fontawesome
-### npm i --save-dev react-test-renderer
+### npm install axios
+### npm install @fortawesome/fontawesome-svg-core
+### npm install @fortawesome/free-solid-svg-icons
+### npm install @fortawesome/react-fontawesome
+
+### npm i --save-dev jest
