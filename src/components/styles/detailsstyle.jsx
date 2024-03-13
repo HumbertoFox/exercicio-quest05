@@ -244,6 +244,10 @@ const DivOl = styled.div`
 const AbilitiesInfo = styled.div`
     display: flex;
     flex-direction: column;
+    
+    @media(max-width: 620px) {
+        text-align: center;
+    }
 `;
 
 const AbilitiesSub = styled.div`
