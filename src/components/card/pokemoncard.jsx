@@ -50,11 +50,11 @@ export const CardPokemon = ({ name }) => {
             <h2>{pokemonId.name}</h2>
             <Link to={`/details/${pokemonId.id}`}>
                 <img src={pokemon.other.showdown.back_default !== null ?
-                pokemon.other.showdown.back_default:
-                pokemon.front_default} alt={`Image ${pokemonId.name}`} />
+                    pokemon.other.showdown.back_default :
+                    pokemon.front_default} alt={`Image ${pokemonId.name}`} />
                 <img src={pokemon.other.showdown.front_default !== null ?
-                pokemon.other.showdown.front_default :
-                pokemon.front_default} alt={`Image ${pokemonId.name}`} />
+                    pokemon.other.showdown.front_default :
+                    pokemon.front_default} alt={`Image ${pokemonId.name}`} />
             </Link>
         </>
     );
