@@ -1,4 +1,7 @@
-import { createContext, useState } from "react";
+import {
+    createContext,
+    useState
+} from "react";
 
 const Themes = {
     light: {
@@ -19,10 +22,14 @@ const ThemeProvider = (props) => {
     const [theme, setTheme] = useState(Themes.light)
 
     return (
-        <ThemeContext.Provider value={{theme, setTheme}}>
+        <ThemeContext.Provider value={{ theme, setTheme }}>
             {props.children}
         </ThemeContext.Provider>
     )
 };
 
-export { Themes, ThemeContext, ThemeProvider };
+export {
+    Themes,
+    ThemeContext,
+    ThemeProvider
+};

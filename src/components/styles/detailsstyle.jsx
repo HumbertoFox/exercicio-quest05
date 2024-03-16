@@ -274,4 +274,15 @@ const AbilitiesSub = styled.div`
     }
 `;
 
-export { Section, Container, DivImg, MainDetails, TypesOl, TypesDiv, TypeH3, DivOl, AbilitiesInfo, AbilitiesSub };
+export {
+    Section,
+    Container,
+    DivImg,
+    MainDetails,
+    TypesOl,
+    TypesDiv,
+    TypeH3,
+    DivOl,
+    AbilitiesInfo,
+    AbilitiesSub
+};

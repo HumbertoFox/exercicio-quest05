@@ -1,4 +1,7 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, {
+    css,
+    keyframes
+} from "styled-components";
 
 const move = keyframes`
     0% {
@@ -244,4 +247,8 @@ const UlList = styled.ul`
     }};
 `;
 
-export { Section, DivForm, UlList };
+export {
+    Section,
+    DivForm,
+    UlList
+};

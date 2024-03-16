@@ -1,5 +1,8 @@
 import axios from "axios";
-import { URL_API, POKEMON_QUANTITY } from "./variables";
+import {
+    URL_API,
+    POKEMON_QUANTITY
+} from "./variables";
 
 const urlApiFetch = async () => {
     const response = await axios.get(`${URL_API}pokemon?limit=${POKEMON_QUANTITY}&offset=0`);
@@ -15,9 +18,6 @@ const urlApiFetchImg = async (name) => {
     const urlName = await axios.get(`${URL_API}pokemon/${name}`);
     const urlData = await urlName.data;
     const urlSprites = await urlData.sprites;
-    // const urlOther = await urlSprites.other;
-    // const urlShowdown = await urlOther.showdown;
-    // return await urlShowdown;
     return await urlSprites
 };
 
@@ -42,4 +42,11 @@ const urlApiFetchAbilities = async (name) => {
     return await response;
 };
 
-export { urlApiFetch, urlApiFetchId, urlApiFetchImg, urlApiFetchType, urlApiFetchTypeSelected, urlApiFetchAbilities };
+export {
+    urlApiFetch,
+    urlApiFetchId,
+    urlApiFetchImg,
+    urlApiFetchType,
+    urlApiFetchTypeSelected,
+    urlApiFetchAbilities
+};

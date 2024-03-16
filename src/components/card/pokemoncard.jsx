@@ -1,6 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, {
+    useEffect,
+    useState
+} from "react";
 import { Link } from "react-router-dom";
-import { urlApiFetchId, urlApiFetchImg } from "../../services/services";
+import {
+    urlApiFetchId,
+    urlApiFetchImg
+} from "../../services/services";
 
 export const CardPokemon = ({ name }) => {
     const [pokemon, setPokemon] = useState(null);

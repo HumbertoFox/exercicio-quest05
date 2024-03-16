@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react";
+import {
+    useEffect,
+    useState
+} from "react";
 import { urlApiFetch, urlApiFetchType, urlApiFetchTypeSelected } from "../../services/services";
 
 export const SelectType = ({ pokeTypeSelectedList }) => {

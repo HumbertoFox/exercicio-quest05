@@ -1,4 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {
+    useContext,
+    useEffect,
+    useState
+} from "react";
 import { Link, useParams } from "react-router-dom";
 import { urlApiFetchAbilities, urlApiFetchId } from "../../services/services";
 import { CardPokemon } from "../../components/card/pokemoncard";
@@ -20,7 +24,7 @@ export const Details = () => {
                 const movesData = idData.moves;
                 const abilitiesData = idData.abilities.map(async (ability) => {
                     const abilityDetails = await urlApiFetchAbilities(ability.ability.name);
-                    const fillLength = abilityDetails.length -1;
+                    const fillLength = abilityDetails.length - 1;
                     return {
                         name: ability.ability.name,
                         flavor_text: abilityDetails[fillLength].flavor_text
@@ -41,7 +45,7 @@ export const Details = () => {
     };
 
     return (
-        <Section style={{color: theme.color, backgroundColor: theme.backgroundColor}}  className={theme.color}>
+        <Section style={{ color: theme.color, backgroundColor: theme.backgroundColor }} className={theme.color}>
             <h1>Pokémon Details</h1>
             <Container>
                 <DivImg>
