@@ -41,15 +41,15 @@ export const CardPokemon = ({ name }) => {
 
     if (loading) {
         return <span>Loading...</span>;
-    }
+    };
 
     if (error) {
         return <span>Error: {error}</span>;
-    }
+    };
 
     if (!pokemon || !pokemonId) {
         return <span>-</span>;
-    }
+    };
 
     return (
         <>

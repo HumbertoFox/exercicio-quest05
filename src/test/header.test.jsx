@@ -3,8 +3,8 @@ import {
   screen,
   fireEvent
 } from '@testing-library/react';
-import { ThemeProvider } from '../contexts/themecontext';
-import { HeaderPage } from '../header/header';
+import { ThemeProvider } from '../components/contexts/themecontext';
+import { HeaderPage } from '../components/header/header';
 
 describe("jest header", () => {
 
