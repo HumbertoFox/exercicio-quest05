@@ -34,9 +34,17 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 
 ### <img src="https://github.com/HumbertoFox/repository/assets/126817628/f7507de6-d7f1-4300-9ca9-7440ed72a1a7" width="250px"/>
 
+### <img src="https://github.com/HumbertoFox/repository/assets/126817628/66c56bdf-ea4f-40a3-8566-3ba7f73e8a59" width="450px"/>
+
+### <img src="https://github.com/HumbertoFox/repository/assets/126817628/6d78732d-ecf3-4529-b787-6015abb3558e" width="450px"/>
+
+### <img src="https://github.com/HumbertoFox/repository/assets/126817628/c84001d4-817d-432c-b751-06b1e99d22dd" width="250px" />
+
+### <img src="https://github.com/HumbertoFox/repository/assets/126817628/8ec82c9e-e554-416f-bf08-08edd1705042" width="250px" />
+
 </div>
 
-## Componentes usados para funcionamento da aplicação!
+## Componentes usados para funcionamento da aplicação em desenvolvimenro!
 
 ### npm install React + Vite
 ### npm install react-hook-form
@@ -50,3 +58,54 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 ### npm i --save-dev jest @types/jest ts-jest
 ### npm i --save-dev babel-jest @babel/core @babel/preset-env @babel/preset-react
 ### npm i --save-dev @testing-library/jest-dom @testing-library/react @testing-library/user-event identity-obj-proxy jest-environment-jsdom
+
+## Para usar o jest foi criado um diretório .jest dentro da raiz do sistema e não dentro do SRC e dentro dele foi criado outro diretório mocks
+## Foi criado o teste em um unico componente no HeaderPage.
+
+## No .jest
+## setup-tests.js
+
+```
+    
+    import '@testing-library/jest-dom'
+
+```
+
+## No mocks
+## fileMock.js
+
+```
+
+    module.exports = 'test-file-stub'
+
+```
+
+## Foi criado um asquivo babel.config.json para configuração dos presets env e react também dentro da raiz do sistema e não dentro do SRC, com os seguintes textos:
+## babel.config.json
+
+```
+
+    {
+        "presets": [
+            [
+                "@babel/preset-env",
+                {
+                    "targets": {
+                        "esmodules": true
+                    }
+                }
+            ],
+            [
+                "@babel/preset-react",
+                {
+                    "runtime": "automatic"
+                }
+            ]
+        ]
+    }
+
+```
+
+### Para rodar o teste pode ser usado os seguintes comandos no terminal:
+## npm run test
+## npx jest
