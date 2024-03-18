@@ -1,4 +1,4 @@
-# Desafio DevQuest PokeDex
+# Desafio DevQuest PokéDex
 
 <div align="center">
 
@@ -6,21 +6,21 @@
 
 </div>
 
-## Objetivo da Aplicação
+### Objetivo da Aplicação
 
 Mostrar uma lista de pokemon e ao clicar no Pokemon mostrar alguns detalhes do pokemon.
 
-## Funcionalidade da Aplicação
+### Funcionalidade da Aplicação
 
 Mostrar uma lista de Pokemon com 10 pokemons, com o nome e a imagem do pokemon 
 ao clicar no botão "Load More" carrega mais 10 pokemons.
 Menu com pesquisar pokemon por nome na lista mostrada,
 Menu mostrando todos os tipos de pokemon ao selecionar mostra 10 pokemons do tipo selecionado,
 o botão "Load More" carrega mais 10 do tipo selecionado.
-Ao clicar no Pokemon mostrar alguns detalhes como imagem, nome, lista de movimentos e uma lista de habilidades com o nome e descrição da mesma.
+Ao clicar no Pokemon mostrar alguns detalhes como imagem, nome, lista de movimentos e uma lista de habilidades com o nome e descrição dele.
 Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 
-## Como será exibido em diferentes telas ou dispositivos:
+### Como será exibido em diferentes telas ou dispositivos:
 
 <div align="center">
 
@@ -44,7 +44,7 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 
 </div>
 
-## Componentes usados para funcionamento da aplicação em desenvolvimenro!
+### Componentes usados para funcionamento da aplicação em desenvolvimento!
 
 ### npm install React + Vite
 ### npm install react-hook-form
@@ -59,11 +59,11 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 ### npm i --save-dev babel-jest @babel/core @babel/preset-env @babel/preset-react
 ### npm i --save-dev @testing-library/jest-dom @testing-library/react @testing-library/user-event identity-obj-proxy jest-environment-jsdom
 
-## Para usar o jest foi criado um diretório .jest dentro da raiz do sistema e não dentro do SRC e dentro dele foi criado outro diretório mocks
-## Foi criado o teste em um unico componente no HeaderPage.
+### Para usar o jest foi criado um diretório .jest dentro da raiz do sistema e não dentro do SRC e dentro dele foi criado outro diretório mocks.
+### Foi criado o teste em um único componente HeaderPage.
 
-## No .jest
-## setup-tests.js
+### No .jest
+### setup-tests.js
 
 ```
     
@@ -71,8 +71,8 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 
 ```
 
-## No mocks
-## fileMock.js
+### No mocks
+### fileMock.js
 
 ```
 
@@ -80,8 +80,8 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 
 ```
 
-## Foi criado um asquivo babel.config.json para configuração dos presets env e react também dentro da raiz do sistema e não dentro do SRC, com os seguintes textos:
-## babel.config.json
+### Foi criado um arquivo babel.config.json para configuração dos presets env e react também dentro da raiz do sistema e não dentro do SRC, com os seguintes textos:
+### babel.config.json
 
 ```
 
@@ -107,5 +107,5 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 ```
 
 ### Para rodar o teste pode ser usado os seguintes comandos no terminal:
-## npm run test
-## npx jest
+### npm run test
+### npx jest
