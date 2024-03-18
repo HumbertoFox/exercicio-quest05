@@ -1,25 +1,30 @@
 import React, { useContext } from "react";
-import { ThemeContext, Themes } from "../contexts/themecontext";
-import { Header, ImgPoKeMoN,
-         ImgPokeDex,
-         BtnToggle,
-         SpanToggle
-        } from "../styles/headerstyle";
+import {
+    ThemeContext,
+    Themes
+} from "../contexts/themecontext";
+import {
+    Header,
+    ImgPoKeMoN,
+    ImgPokeDex,
+    BtnToggle,
+    SpanToggle
+} from "../styles/headerstyle";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 library.add(fas);
 
 export const HeaderPage = () => {
-    
-    const {theme, setTheme} = useContext(ThemeContext);
+
+    const { theme, setTheme } = useContext(ThemeContext);
 
     return (
-        <Header style={{color: theme.color, backgroundColor: theme.backgroundColor}}>
+        <Header style={{ color: theme.color, backgroundColor: theme.backgroundColor }}>
             <ImgPoKeMoN src="../../src/assets/images/pokemon-logo-png-1421.png" alt="Logo pokémon" />
-            <ImgPokeDex src="../../src/assets/images/pokedex.png" alt="Logo Pokedex" />
+            <ImgPokeDex src="../../src/assets/images/pokedex.png" alt="Logo Pokédex" />
             <BtnToggle>
-                <SpanToggle onClick={() => theme === Themes.light ?
+                <SpanToggle data-testid="span" onClick={() => theme === Themes.light ?
                     setTheme(Themes.dark) :
                     setTheme(Themes.light)}
                     className={theme} />

@@ -47,4 +47,6 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 ### npm install @fortawesome/free-solid-svg-icons
 ### npm install @fortawesome/react-fontawesome
 
-### npm i --save-dev jest
+### npm i --save-dev jest @types/jest ts-jest
+### npm i --save-dev babel-jest @babel/core @babel/preset-env @babel/preset-react
+### npm i --save-dev @testing-library/jest-dom @testing-library/react @testing-library/user-event identity-obj-proxy jest-environment-jsdom
