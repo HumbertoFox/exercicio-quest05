@@ -3,7 +3,11 @@ import React, {
     useEffect,
     useState
 } from "react";
-import { DivForm, Section, UlList } from "../../components/styles/homestyle"
+import {
+    DivForm,
+    Section,
+    UlList
+} from "../../components/styles/homestyle"
 import { ThemeContext } from "../../components/contexts/themecontext";
 import { urlApiFetch } from "../../services/services";
 import { CardPokemon } from "../../components/card/pokemoncard";

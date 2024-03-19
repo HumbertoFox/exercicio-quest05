@@ -2,7 +2,11 @@ import {
     useEffect,
     useState
 } from "react";
-import { urlApiFetch, urlApiFetchType, urlApiFetchTypeSelected } from "../../services/services";
+import {
+    urlApiFetch,
+    urlApiFetchType,
+    urlApiFetchTypeSelected
+} from "../../services/services";
 
 export const SelectType = ({ pokeTypeSelectedList }) => {
 

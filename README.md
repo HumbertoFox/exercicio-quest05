@@ -47,10 +47,14 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 ### Componentes usados para funcionamento da aplicação em desenvolvimento!
 
 ### npm install React + Vite
+
 ### npm install react-hook-form
 ### npm install react-router-dom
+
 ### npm install styled-components
+
 ### npm install axios
+
 ### npm install @fortawesome/fontawesome-svg-core
 ### npm install @fortawesome/free-solid-svg-icons
 ### npm install @fortawesome/react-fontawesome
@@ -66,7 +70,7 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 ### setup-tests.js
 
 ```
-    
+
     import '@testing-library/jest-dom'
 
 ```
@@ -107,5 +111,7 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 ```
 
 ### Para rodar o teste pode ser usado os seguintes comandos no terminal:
+
 ### npm run test
+
 ### npx jest
