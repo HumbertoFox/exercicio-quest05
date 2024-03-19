@@ -12,11 +12,9 @@ Mostrar uma lista de pokemon e ao clicar no Pokemon mostrar alguns detalhes do p
 
 ### Funcionalidade da Aplicação
 
-Mostrar uma lista de Pokemon com 10 pokemons, com o nome e a imagem do pokemon 
-ao clicar no botão "Load More" carrega mais 10 pokemons.
-Menu com pesquisar pokemon por nome na lista mostrada,
-Menu mostrando todos os tipos de pokemon ao selecionar mostra 10 pokemons do tipo selecionado,
-o botão "Load More" carrega mais 10 do tipo selecionado.
+Mostrar uma lista de Pokemon com 10 pokemons, com o nome e a imagem do pokemon ao clicar no botão "Load More" carrega mais 10 pokemons.
+Caixa de texto com pesquisar pokemon por nome na lista mostrada ao clicar no botão Search "Pesquisar".
+Menu mostrando todos os tipos de pokemon ao selecionar mostra 10 pokemons do tipo selecionado, o botão "Load More" carrega mais 10 do tipo selecionado.
 Ao clicar no Pokemon mostrar alguns detalhes como imagem, nome, lista de movimentos e uma lista de habilidades com o nome e descrição dele.
 Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 
@@ -64,7 +62,7 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 ### npm i --save-dev @testing-library/jest-dom @testing-library/react @testing-library/user-event identity-obj-proxy jest-environment-jsdom
 
 ### Para usar o jest foi criado um diretório .jest dentro da raiz do sistema e não dentro do SRC e dentro dele foi criado outro diretório mocks.
-### Foi criado o teste em um único componente HeaderPage.
+### Foi criado o teste em um único componente HeaderPage para verificar se alguns componentes foram renderizado.
 
 ### No .jest
 ### setup-tests.js
