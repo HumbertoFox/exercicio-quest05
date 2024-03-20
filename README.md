@@ -44,18 +44,33 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 
 ### Componentes usados para funcionamento da aplicação em desenvolvimento!
 
+Ferramenta de desenvolvimento SPA.
+
 ### npm install React + Vite
 
+Biblioteca para acesso ao form para buscar nome na lista.
+
 ### npm install react-hook-form
+
+Biblioteca para direcionamento entre pagnas.
+
 ### npm install react-router-dom
+
+Styled biblioteca para estilização.
 
 ### npm install styled-components
 
+Axios biblioteca para tratamento de promise.
+
 ### npm install axios
+
+Biblioteca para acesso as fontes e icones do fontawesome.
 
 ### npm install @fortawesome/fontawesome-svg-core
 ### npm install @fortawesome/free-solid-svg-icons
 ### npm install @fortawesome/react-fontawesome
+
+Biblioteca para teste dos componentes desenvolvidos.
 
 ### npm i --save-dev jest @types/jest ts-jest
 ### npm i --save-dev babel-jest @babel/core @babel/preset-env @babel/preset-react
