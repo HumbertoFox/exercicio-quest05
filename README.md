@@ -60,7 +60,7 @@ Biblioteca para estilização.
 
 ### npm install styled-components
 
-Axios biblioteca para tratamento de promise.
+Biblioteca para tratamento de promise.
 
 ### npm install axios
 
