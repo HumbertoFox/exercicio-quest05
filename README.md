@@ -56,7 +56,7 @@ Biblioteca para direcionamento entre pagnas.
 
 ### npm install react-router-dom
 
-Styled biblioteca para estilização.
+Biblioteca para estilização.
 
 ### npm install styled-components
 
