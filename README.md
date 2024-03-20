@@ -44,39 +44,39 @@ Conter um botão para mudar de theme "tema", light "claro" e dark "escuro".
 
 ### Componentes usados para funcionamento da aplicação em desenvolvimento!
 
-Ferramenta de desenvolvimento SPA.
+### Ferramenta de desenvolvimento SPA.
 
-### npm install React + Vite
+npm install React + Vite
 
-Biblioteca para acesso ao form para buscar nome na lista.
+### Biblioteca para acesso ao form para buscar nome na lista.
 
-### npm install react-hook-form
+npm install react-hook-form
 
-Biblioteca para direcionamento entre pagnas.
+### Biblioteca para direcionamento entre pagnas.
 
-### npm install react-router-dom
+npm install react-router-dom
 
-Biblioteca para estilização.
+### Biblioteca para estilização.
 
-### npm install styled-components
+npm install styled-components
 
-Biblioteca para tratamento de promise.
+### Biblioteca para tratamento de promise.
 
-### npm install axios
+npm install axios
 
-Biblioteca para acesso as fontes e icones do fontawesome.
+### Biblioteca para acesso as fontes e icones do fontawesome.
 
-### npm install @fortawesome/fontawesome-svg-core
-### npm install @fortawesome/free-solid-svg-icons
-### npm install @fortawesome/react-fontawesome
+npm install @fortawesome/fontawesome-svg-core
+npm install @fortawesome/free-solid-svg-icons
+npm install @fortawesome/react-fontawesome
 
-Biblioteca para teste dos componentes desenvolvidos.
+### Biblioteca para teste dos componentes desenvolvidos.
 
-### npm i --save-dev jest @types/jest ts-jest
-### npm i --save-dev babel-jest @babel/core @babel/preset-env @babel/preset-react
-### npm i --save-dev @testing-library/jest-dom @testing-library/react @testing-library/user-event identity-obj-proxy jest-environment-jsdom
+npm i --save-dev jest @types/jest ts-jest
+npm i --save-dev babel-jest @babel/core @babel/preset-env @babel/preset-react
+npm i --save-dev @testing-library/jest-dom @testing-library/react @testing-library/user-event identity-obj-proxy jest-environment-jsdom
 
-### Para usar o jest foi criado um diretório .jest dentro da raiz do sistema e não dentro do SRC e dentro dele foi criado outro diretório mocks.
+### Para funcionamento do jest foi criado um diretório .jest dentro da raiz do sistema e não dentro do SRC e dentro dele foi criado outro diretório mocks.
 ### Foi criado o teste em um único componente HeaderPage para verificar se alguns componentes foram renderizado.
 
 ### No .jest
