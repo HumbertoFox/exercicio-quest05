@@ -66,14 +66,14 @@ npm install axios
 
 ### Biblioteca para acesso as fontes e icones do fontawesome.
 
-npm install @fortawesome/fontawesome-svg-core
-npm install @fortawesome/free-solid-svg-icons
+npm install @fortawesome/fontawesome-svg-core<br>
+npm install @fortawesome/free-solid-svg-icons<br>
 npm install @fortawesome/react-fontawesome
 
 ### Biblioteca para teste dos componentes desenvolvidos.
 
-npm i --save-dev jest @types/jest ts-jest
-npm i --save-dev babel-jest @babel/core @babel/preset-env @babel/preset-react
+npm i --save-dev jest @types/jest ts-jest<br>
+npm i --save-dev babel-jest @babel/core @babel/preset-env @babel/preset-react<br>
 npm i --save-dev @testing-library/jest-dom @testing-library/react @testing-library/user-event identity-obj-proxy jest-environment-jsdom
 
 ### Para funcionamento do jest foi criado um diretório .jest dentro da raiz do sistema e não dentro do SRC e dentro dele foi criado outro diretório mocks.
@@ -125,9 +125,9 @@ npm i --save-dev @testing-library/jest-dom @testing-library/react @testing-libra
 
 ### Para rodar o teste pode ser usado os seguintes comandos no terminal:
 
-### npm run test
+npm run test
 
-### npx jest
+npx jest
 
 ## Desenvolvido em:
 
