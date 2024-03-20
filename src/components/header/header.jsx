@@ -21,8 +21,8 @@ export const HeaderPage = () => {
 
     return (
         <Header style={{ color: theme.color, backgroundColor: theme.backgroundColor }}>
-            <ImgPoKeMoN src="./src/images/pokemon_logo.png" alt="Logo pokémon" />
-            <ImgPokeDex src="./src/images/pokedex.png" alt="Logo Pokédex" />
+            <ImgPoKeMoN src="./images/pokemon_logo.png" alt="Logo pokémon" />
+            <ImgPokeDex src="./images/pokedex.png" alt="Logo Pokédex" />
             <BtnToggle>
                 <SpanToggle data-testid="span" onClick={() => theme === Themes.light ?
                     setTheme(Themes.dark) :
