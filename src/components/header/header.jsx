@@ -10,6 +10,8 @@ import {
     BtnToggle,
     SpanToggle
 } from "../styles/headerstyle";
+import LogoPokemon from "../../assets/pokemon_logo.png";
+import LogoPokedex from "../../assets/pokedex.png";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -21,8 +23,8 @@ export const HeaderPage = () => {
 
     return (
         <Header style={{ color: theme.color, backgroundColor: theme.backgroundColor }}>
-            <ImgPoKeMoN src="./images/pokemon_logo.png" alt="Logo pokémon" />
-            <ImgPokeDex src="./images/pokedex.png" alt="Logo Pokédex" />
+            <ImgPoKeMoN src={LogoPokemon} alt="Logo pokémon" />
+            <ImgPokeDex src={LogoPokedex} alt="Logo Pokédex" />
             <BtnToggle>
                 <SpanToggle data-testid="span" onClick={() => theme === Themes.light ?
                     setTheme(Themes.dark) :
