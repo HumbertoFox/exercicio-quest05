@@ -16,6 +16,7 @@ const move = keyframes`
 `;
 
 const Section = styled.section`
+    width: 100%;
     height: 100%;
     transition: .4s ease-in-out;
 

@@ -11,11 +11,15 @@ library.add(fas);
 export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
 
     const [pokemonSearch, setPokemonSearch] = useState(pokemonSearchList);
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
 
     const handleSubmitList = async (data) => {
         const filteredPokemon = pokemonSearchList.filter(pokeName => pokeName.name.includes(data.name));
-        setPokemonSearch(filteredPokemon);
+        if (filteredPokemon.length == 0) {
+         alert("Pokemon is not on the list below or name does not exist");
+        } else {
+            setPokemonSearch(filteredPokemon);
+        }
     };
 
     useEffect(() => {
@@ -41,7 +45,6 @@ export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
                     minLength: 3,
                 })
                 } />
-            {errors.name && <span>{errors.name.message}</span>}
             <input type="submit" value="Search" />
         </form>
     );
