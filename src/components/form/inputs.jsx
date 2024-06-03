@@ -11,12 +11,12 @@ library.add(fas);
 export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
 
     const [pokemonSearch, setPokemonSearch] = useState(pokemonSearchList);
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     const handleSubmitList = async (data) => {
         const filteredPokemon = pokemonSearchList.filter(pokeName => pokeName.name.includes(data.name));
         if (filteredPokemon.length == 0) {
-         alert("Pokemon is not on the list below or name does not exist");
+            alert("Pokemon is not on the list below or name does not exist");
         } else {
             setPokemonSearch(filteredPokemon);
         }
@@ -38,10 +38,11 @@ export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
             <input
                 type="search"
                 id="name"
-                placeholder="Name in the list"
+                placeholder={`${errors.name ? "Min 3 characters" : "Name in the list"}`}
+                className={`${errors.name? "required" : ""}`}
                 {
                 ...register('name', {
-                    required: true,
+                    required: "Required field",
                     minLength: 3,
                 })
                 } />

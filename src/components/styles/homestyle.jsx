@@ -100,6 +100,18 @@ const DivForm = styled.div`
         border-radius: 5px;
         border: 1px solid;
     }
+    input.required:focus {
+        box-shadow: 0 0 5px #F50002;
+    }
+    input.required,
+    input.required:focus {
+        border: 1px solid #F50002;
+        outline: none;
+    }
+    .required::placeholder {
+        font-style: italic;
+        color: #F50002;
+    }
     ${({ className }) => {
         if (className === "#000") {
             return css`
