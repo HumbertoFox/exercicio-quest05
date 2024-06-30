@@ -23,7 +23,9 @@ import {
     Section,
     TypesDiv,
     TypeH3,
-    TypesOl
+    TypesOl,
+    DinLeft,
+    DivRight
 } from "../../components/styles/detailsstyle";
 
 export const Details = () => {
@@ -65,6 +67,8 @@ export const Details = () => {
         <Section style={{ color: theme.color, backgroundColor: theme.backgroundColor }} className={theme.color}>
             <h1>Pokémon Details</h1>
             <Container>
+                <DinLeft />
+                <DivRight />
                 <DivImg>
                     <CardPokemon name={pokemonId.name} />
                 </DivImg>
@@ -102,7 +106,7 @@ export const Details = () => {
                     </AbilitiesInfo>
                 </MainDetails>
             </Container>
-            <Link to={`/`}>Back to Home</Link>
+            <Link to={'/'}>Back to Home</Link>
         </Section>
     );
 };

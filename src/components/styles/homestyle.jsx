@@ -24,6 +24,7 @@ const Section = styled.section`
         display: block;
         font-size: 15px;
         font-weight: bold;
+        font-style: italic;
         padding: 15px 10px;
         margin: 0 auto;
         transition: .4s ease-in-out;

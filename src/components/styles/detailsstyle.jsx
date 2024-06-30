@@ -17,34 +17,36 @@ const Section = styled.section`
         font-size: 15px;
     }
 
-    a:nth-child(3) {
+    a:last-child {
         font-size: 15px;
         font-weight: bold;
+        font-style: italic;
         margin-top: 15px;
         transition: .4s ease-in-out;
     }
     ${({ className }) => {
         if (className === "#FFF") {
             return css`
-                a:nth-child(3) {
+                a:last-child {
                     color: #FFF;
                 }
             `;
         } else {
             return css`
-                a:nth-child(3) {
+                a:last-child {
                     color: #0202F5;
                 }
             `;
         };
     }};
-    a:nth-child(3):hover {
+    a:last-child:hover {
         text-shadow: 0 0 2px #F5F502;
         transform: scale(1.1);
     }
 `;
 
 const Container = styled.div`
+    position: relative;
     width: 570px;
     min-height: 310px;
     display: flex;
@@ -274,6 +276,28 @@ const AbilitiesSub = styled.div`
     }
 `;
 
+const DinLeft = styled.div`
+    position: absolute;
+    width: 50%;
+    /* height: 100%; */
+    top: 0;
+    left: 0;
+    background-color: red;
+    border-bottom-left-radius: 20px;
+    border: 2px solid #000;
+`;
+
+const DivRight = styled.div`
+    position: absolute;
+    width: 50%;
+    /* height: 100%; */
+    top: 0;
+    right: 0;
+    background-color: red;
+    border-top-right-radius: 20px;
+    border: 2px solid #000;
+`;
+
 export {
     Section,
     Container,
@@ -284,5 +308,7 @@ export {
     TypeH3,
     DivOl,
     AbilitiesInfo,
-    AbilitiesSub
+    AbilitiesSub,
+    DinLeft,
+    DivRight
 };

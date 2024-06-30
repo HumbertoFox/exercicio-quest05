@@ -1,7 +1,7 @@
 {
   "name": "exercicio-quest-05",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "commonjs",
   "scripts": {
     "dev": "vite",
@@ -15,6 +15,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "axios": "^1.6.7",
+    "npm-check": "^6.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.49.3",
@@ -42,5 +43,8 @@
     "jest-environment-jsdom": "^29.7.0",
     "ts-jest": "^29.1.2",
     "vite": "^5.0.8"
-  }
+  },
+  "keywords": [],
+  "author": "BetoFoxNet_info",
+  "license": "ISC"
 }
