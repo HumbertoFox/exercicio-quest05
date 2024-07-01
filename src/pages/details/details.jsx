@@ -67,8 +67,8 @@ export const Details = () => {
         <Section style={{ color: theme.color, backgroundColor: theme.backgroundColor }} className={theme.color}>
             <h1>Pokémon Details</h1>
             <Container>
-                <DinLeft />
-                <DivRight />
+                <DinLeft className={theme.color} />
+                <DivRight className={theme.color} />
                 <DivImg>
                     <CardPokemon name={pokemonId.name} />
                 </DivImg>

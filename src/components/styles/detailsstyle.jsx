@@ -1,4 +1,24 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+const WindowMoveLeft = keyframes`
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -25%;
+        transform: rotateY(90deg);
+    }
+`;
+
+const WindowMoveRight = keyframes`
+    0% {
+        right: 0;
+    }
+    100% {
+        right: -25%;
+        transform: rotateY(90deg);
+    }
+`;
 
 const Section = styled.section`
     width: 100%;
@@ -277,25 +297,47 @@ const AbilitiesSub = styled.div`
 `;
 
 const DinLeft = styled.div`
+    ${({ className }) => {
+        if (className === "#FFF") {
+            return css`
+                border: 2px solid #FFF;
+            `;
+        } else {
+            return css`
+                border: 2px solid #000;
+            `;
+        };
+    }};
     position: absolute;
     width: 50%;
-    /* height: 100%; */
+    height: 100%;
     top: 0;
     left: 0;
     background-color: red;
     border-bottom-left-radius: 20px;
-    border: 2px solid #000;
+    animation: ${WindowMoveLeft} 5s both 1s;
 `;
 
 const DivRight = styled.div`
+    ${({ className }) => {
+        if (className === "#FFF") {
+            return css`
+                border: 2px solid #FFF;
+            `;
+        } else {
+            return css`
+                border: 2px solid #000;
+            `;
+        };
+    }};
     position: absolute;
     width: 50%;
-    /* height: 100%; */
+    height: 100%;
     top: 0;
     right: 0;
     background-color: red;
     border-top-right-radius: 20px;
-    border: 2px solid #000;
+    animation: ${WindowMoveRight} 5s both 1s;
 `;
 
 export {
