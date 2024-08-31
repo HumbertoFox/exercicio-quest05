@@ -1,32 +1,9 @@
-import React, {
-    useContext,
-    useEffect,
-    useState
-} from "react";
-import {
-    Link,
-    useParams
-} from "react-router-dom";
-import {
-    urlApiFetchAbilities,
-    urlApiFetchId
-} from "../../services/services";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { urlApiFetchAbilities, urlApiFetchId } from "../../services/services";
 import { CardPokemon } from "../../components/card/pokemoncard";
 import { ThemeContext } from "../../components/contexts/themecontext";
-import {
-    AbilitiesInfo,
-    AbilitiesSub,
-    Container,
-    DivImg,
-    DivOl,
-    MainDetails,
-    Section,
-    TypesDiv,
-    TypeH3,
-    TypesOl,
-    DinLeft,
-    DivRight
-} from "../../components/styles/detailsstyle";
+import { AbilitiesInfo, AbilitiesSub, Container, DivImg, DivOl, MainDetails, Section, TypesDiv, TypeH3, TypesOl, DinLeft, DivRight } from "../../components/styles/detailsstyle";
 
 export const Details = () => {
 

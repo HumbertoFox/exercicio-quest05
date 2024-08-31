@@ -1,7 +1,4 @@
-import styled, {
-    css,
-    keyframes
-} from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 const move = keyframes`
     0% {
@@ -15,21 +12,23 @@ const move = keyframes`
     }
 `;
 
+const movey = keyframes`
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25%, 75% {
+        transform: translateY(3px);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+`;
+
 const Section = styled.section`
     width: 100%;
     height: 100%;
+    padding-bottom: 20px;
     transition: .4s ease-in-out;
-
-    button {
-        display: block;
-        font-size: 15px;
-        font-weight: bold;
-        font-style: italic;
-        padding: 15px 10px;
-        margin: 0 auto;
-        transition: .4s ease-in-out;
-    }
-
     ${({ className }) => {
         if (className === "#FFF") {
             return css`
@@ -45,11 +44,6 @@ const Section = styled.section`
             `;
         };
     }};
-
-    button:hover {
-        text-shadow: 0 0 2px #F5F502;
-        transform: scale(1.1);
-    }
 `;
 
 const DivForm = styled.div`
@@ -70,28 +64,21 @@ const DivForm = styled.div`
     input[type=search] {
         width: 170px;
         padding: 0 10px 0 26px;
-        border: 1px solid;
+        border: 1px solid hsla(205.46, 86.5%, 46.47%, .5);
         border-radius: 5px;
+        outline: none;
+        transition: all .4s ease-in-out;
     }
-    input[type=submit] {
-        width: 70px;
-        color: #FFF;
-        background-color: #F50002;
-        border-radius: 5px;
-        border: 1px solid;
-    }
-    input[type=submit]:active,
     input[type=search]:focus,
     select:focus {
-        border-color: #000 #999 #999 #000;
+        border: 1px solid hsla(205.46, 86.5%, 46.47%, .5);
+        box-shadow: 0 0 5px hsla(205.46, 86.5%, 46.47%, .5);
     }
     input[type=search],
-    input[type=submit],
     select {
         height: 35px;
         font-size: 14px;
         font-weight: bold;
-        border-color: #999 #000 #000 #999;
         cursor: pointer;
         transition: .4s ease-in-out;
     }
@@ -101,13 +88,12 @@ const DivForm = styled.div`
         border-radius: 5px;
         border: 1px solid;
     }
-    input.required:focus {
-        box-shadow: 0 0 5px #F50002;
+    input.required {
+        border: 1px solid #F50002;
     }
-    input.required,
     input.required:focus {
         border: 1px solid #F50002;
-        outline: none;
+        box-shadow: 0 0 5px #F50002;
     }
     .required::placeholder {
         font-style: italic;
@@ -134,11 +120,23 @@ const DivForm = styled.div`
     }};
 `;
 
+const BtnSearchNext = styled.button`
+    width: 30px;
+    display: flex;
+    align-items: center;
+    animation: ${movey} 1s infinite;
+    margin: 0 auto;
+    img {
+        width: 100%;
+    }
+`;
+
 const UlList = styled.ul`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
+    padding-bottom: 20px;
 
     li {
         width: 270px;
@@ -261,8 +259,4 @@ const UlList = styled.ul`
     }};
 `;
 
-export {
-    Section,
-    DivForm,
-    UlList
-};
+export { Section, DivForm, BtnSearchNext, UlList };

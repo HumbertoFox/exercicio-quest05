@@ -2,10 +2,9 @@ import { useForm } from "react-hook-form";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import {
-    useEffect,
-    useState
-} from "react";
+import { useEffect, useState } from "react";
+import { BtnSearchNext } from "../styles/homestyle";
+import ImgBtnSearch from "../../assets/pokeball.png";
 library.add(fas);
 
 export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
@@ -19,7 +18,7 @@ export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
             alert("Pokemon is not on the list below or name does not exist");
         } else {
             setPokemonSearch(filteredPokemon);
-        }
+        };
     };
 
     useEffect(() => {
@@ -27,9 +26,7 @@ export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
     }, [pokemonSearchList]);
 
     useEffect(() => {
-        pokemonSearch.length !== 0 ?
-            pokemon(pokemonSearch) :
-            pokemon(pokemonSearchList);
+        pokemonSearch.length !== 0 ? pokemon(pokemonSearch) : pokemon(pokemonSearchList);
     }, [pokemonSearch]);
 
     return (
@@ -39,14 +36,10 @@ export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
                 type="search"
                 id="name"
                 placeholder={`${errors.name ? "Min 3 characters" : "Name in the list"}`}
-                className={`${errors.name? "required" : ""}`}
-                {
-                ...register('name', {
-                    required: "Required field",
-                    minLength: 3,
-                })
+                className={`${errors.name ? "required" : ""}`}
+                {...register('name', { required: "Required field", minLength: 3, })
                 } />
-            <input type="submit" value="Search" />
+            <BtnSearchNext type="submit" title="Search Pokemon"><img src={ImgBtnSearch} alt="pokeball icon" /></BtnSearchNext>
         </form>
     );
 };

@@ -1,19 +1,11 @@
-import React, {
-    useContext,
-    useEffect,
-    useState
-} from "react";
-import {
-    DivForm,
-    Section,
-    UlList
-} from "../../components/styles/homestyle"
+import React, { useContext, useEffect, useState } from "react";
+import { BtnSearchNext, DivForm, Section, UlList } from "../../components/styles/homestyle"
 import { ThemeContext } from "../../components/contexts/themecontext";
 import { urlApiFetch } from "../../services/services";
 import { CardPokemon } from "../../components/card/pokemoncard";
 import { FormSearchList } from "../../components/form/inputs";
-import { ButtonNext } from "../../components/button/buttonnext";
 import { SelectType } from "../../components/form/selects";
+import ImgPokeBall from "../../assets/pokeball.png";
 import axios from "axios";
 var urlNext, increment;
 
@@ -99,9 +91,9 @@ export const Home = () => {
                     })
                 }
             </UlList>
-            <ButtonNext onClick={listTypeSelected.length === 10 || listTypeSelected.length === 0 ? () => updateList() : () => listTypeSelect()}>
-                {"Load More"}
-            </ButtonNext>
+            <BtnSearchNext type="button" title="Load More" onClick={listTypeSelected.length === 10 || listTypeSelected.length === 0 ? () => updateList() : () => listTypeSelect()}>
+                <img src={ImgPokeBall} alt="Ico pokeball" />
+            </BtnSearchNext>
         </Section>
     );
 };
