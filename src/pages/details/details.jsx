@@ -1,9 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { far } from "@fortawesome/free-regular-svg-icons";
 import { urlApiFetchAbilities, urlApiFetchId } from "../../services/services";
 import { CardPokemon } from "../../components/card/pokemoncard";
 import { ThemeContext } from "../../components/contexts/themecontext";
 import { AbilitiesInfo, AbilitiesSub, Container, DivImg, DivOl, MainDetails, Section, TypesDiv, TypeH3, TypesOl, DinLeft, DivRight } from "../../components/styles/detailsstyle";
+library.add(far);
 
 export const Details = () => {
 
@@ -83,7 +87,7 @@ export const Details = () => {
                     </AbilitiesInfo>
                 </MainDetails>
             </Container>
-            <Link to={'/'}>Back to Home</Link>
+            <Link to={'/'} title="Home"><FontAwesomeIcon icon="fa-regular fa-circle-left" title="Home" role="Home" /></Link>
         </Section>
     );
 };

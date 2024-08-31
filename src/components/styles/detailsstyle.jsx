@@ -38,10 +38,10 @@ const Section = styled.section`
     }
 
     a:last-child {
-        font-size: 15px;
+        font-size: 35px;
         font-weight: bold;
         font-style: italic;
-        margin-top: 15px;
+        margin-top: 30px;
         transition: .4s ease-in-out;
     }
     ${({ className }) => {
@@ -60,8 +60,9 @@ const Section = styled.section`
         };
     }};
     a:last-child:hover {
-        text-shadow: 0 0 2px #F5F502;
-        transform: scale(1.1);
+        text-shadow: 0 0 2px #0202F5;
+        color: #F50202;
+        transform: rotate(360deg);
     }
 `;
 
@@ -340,17 +341,4 @@ const DivRight = styled.div`
     animation: ${WindowMoveRight} 5s both 1s;
 `;
 
-export {
-    Section,
-    Container,
-    DivImg,
-    MainDetails,
-    TypesOl,
-    TypesDiv,
-    TypeH3,
-    DivOl,
-    AbilitiesInfo,
-    AbilitiesSub,
-    DinLeft,
-    DivRight
-};
+export { Section, Container, DivImg, MainDetails, TypesOl, TypesDiv, TypeH3, DivOl, AbilitiesInfo, AbilitiesSub, DinLeft, DivRight };

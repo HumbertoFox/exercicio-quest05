@@ -73,10 +73,4 @@ const SpanToggle = styled.span`
     }};
 `;
 
-export {
-    Header,
-    ImgPoKeMoN,
-    ImgPokeDex,
-    BtnToggle,
-    SpanToggle
-};
+export { Header, ImgPoKeMoN, ImgPokeDex, BtnToggle, SpanToggle };
