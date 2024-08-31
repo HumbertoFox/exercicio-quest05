@@ -60,6 +60,7 @@ const DivForm = styled.div`
     svg {
         margin-right: -32px;
         z-index: 1;
+        color: grey;
     }
     input[type=search] {
         width: 170px;
@@ -86,7 +87,7 @@ const DivForm = styled.div`
         width: 90px;
         text-align: center;
         border-radius: 5px;
-        border: 1px solid;
+        border: 1px solid hsla(205.46, 86.5%, 46.47%, .5);
     }
     input.required {
         border: 1px solid #F50002;
