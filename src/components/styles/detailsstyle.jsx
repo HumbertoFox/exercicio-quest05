@@ -33,11 +33,11 @@ const Section = styled.section`
         font-size: 16px;
     }
 
-    h2 {
+    h2, h3, h4 {
         font-size: 15px;
     }
 
-    a:last-child {
+    a:last-child svg {
         font-size: 35px;
         font-weight: bold;
         font-style: italic;
@@ -47,22 +47,21 @@ const Section = styled.section`
     ${({ className }) => {
         if (className === "#FFF") {
             return css`
-                a:last-child {
+                a:last-child svg {
                     color: #FFF;
                 }
             `;
         } else {
             return css`
-                a:last-child {
+                a:last-child svg {
                     color: #0202F5;
                 }
             `;
         };
     }};
-    a:last-child:hover {
-        text-shadow: 0 0 2px #0202F5;
+    a:last-child:hover svg {
         color: #F50202;
-        transform: rotate(360deg);
+        text-shadow: 0 0 2px #0202F5;
     }
 `;
 

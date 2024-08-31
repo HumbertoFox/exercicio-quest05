@@ -56,7 +56,7 @@ export const Details = () => {
                 <MainDetails>
                     <TypesOl>
                         <TypesDiv>
-                            <h2>Types</h2>
+                            <h3>Types</h3>
                             <div>
                                 {pokemonId.types.map((types, index) => (
                                     <TypeH3 className={types.type.name} key={index}>{types.type.name}</TypeH3>
@@ -64,7 +64,7 @@ export const Details = () => {
                             </div>
                         </TypesDiv>
                         <DivOl>
-                            <h2>Moves List</h2>
+                            <h3>Moves List</h3>
                             <ol>
                                 {pokemonMoves.map((resMove, index) => (
                                     <li key={index}>
@@ -75,11 +75,11 @@ export const Details = () => {
                         </DivOl>
                     </TypesOl>
                     <AbilitiesInfo>
-                        <h2>Abilities List</h2>
+                        <h3>Abilities List</h3>
                         <AbilitiesSub>
                             {pokemonAbilities.map((ability, index) => (
                                 <div key={index}>
-                                    <h3>{ability.name}</h3>
+                                    <h4>{ability.name}</h4>
                                     <p>{ability.flavor_text}</p>
                                 </div>
                             ))}
