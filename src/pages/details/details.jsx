@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import ReactLoading from 'react-loading';
 import { Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -41,7 +42,7 @@ export const Details = () => {
     }, [id]);
 
     if (!pokemonId || !pokemonMoves || !pokemonAbilities) {
-        return <Section>Loading...</Section>;
+        return <ReactLoading type='spin' color='#3C91E6' width={100} height={100} />;
     };
 
     return (

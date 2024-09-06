@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import ReactLoading from 'react-loading';
 import { BtnSearchNext, DivForm, Section, UlList } from "../../components/styles/homestyle"
 import { ThemeContext } from "../../components/contexts/themecontext";
 import { urlApiFetch } from "../../services/services";
@@ -69,9 +70,7 @@ export const Home = () => {
     }, []);
 
     if (pokemonList === null) {
-        return (
-            <span>Loading...</span>
-        );
+        return <ReactLoading type='spin' color='#3C91E6' width={100} height={100} />;
     };
 
     return (

@@ -1,12 +1,7 @@
-import React, {
-    useEffect,
-    useState
-} from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-    urlApiFetchId,
-    urlApiFetchImg
-} from "../../services/services";
+import ReactLoading from 'react-loading';
+import { urlApiFetchId, urlApiFetchImg } from "../../services/services";
 
 export const CardPokemon = ({ name }) => {
     const [pokemon, setPokemon] = useState(null);
@@ -20,7 +15,7 @@ export const CardPokemon = ({ name }) => {
             setPokemonId(response);
         } catch (error) {
             setError(error.message);
-        }
+        };
     };
 
     const updateFetchName = async () => {
@@ -31,7 +26,7 @@ export const CardPokemon = ({ name }) => {
             setError(error.message);
         } finally {
             setLoading(false);
-        }
+        };
     };
 
     useEffect(() => {
@@ -40,7 +35,7 @@ export const CardPokemon = ({ name }) => {
     }, [name]);
 
     if (loading) {
-        return <span>Loading...</span>;
+        return <ReactLoading type='spin' color='#3C91E6' width={70} height={70} />;
     };
 
     if (error) {
@@ -55,12 +50,8 @@ export const CardPokemon = ({ name }) => {
         <>
             <h2>{pokemonId.name}</h2>
             <Link to={`/details/${pokemonId.id}`}>
-                <img src={pokemon.other.showdown.back_default !== null ?
-                    pokemon.other.showdown.back_default :
-                    pokemon.front_default} alt={`Image ${pokemonId.name}`} />
-                <img src={pokemon.other.showdown.front_default !== null ?
-                    pokemon.other.showdown.front_default :
-                    pokemon.front_default} alt={`Image ${pokemonId.name}`} />
+                <img src={pokemon.other.showdown.back_default !== null ? pokemon.other.showdown.back_default : pokemon.front_default} alt={`Image ${pokemonId.name}`} />
+                <img src={pokemon.other.showdown.front_default !== null ? pokemon.other.showdown.front_default : pokemon.front_default} alt={`Image ${pokemonId.name}`} />
             </Link>
         </>
     );

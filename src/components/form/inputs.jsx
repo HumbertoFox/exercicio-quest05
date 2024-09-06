@@ -14,20 +14,13 @@ export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
 
     const handleSubmitList = async (data) => {
         const filteredPokemon = pokemonSearchList.filter(pokeName => pokeName.name.includes(data.name));
-        if (filteredPokemon.length == 0) {
-            alert("Pokemon is not on the list below or name does not exist");
-        } else {
-            setPokemonSearch(filteredPokemon);
-        };
+        if (filteredPokemon.length == 0) { alert("Pokemon is not on the list below or name does not exist"); }
+        else { setPokemonSearch(filteredPokemon); };
     };
 
-    useEffect(() => {
-        setPokemonSearch(pokemonSearchList);
-    }, [pokemonSearchList]);
+    useEffect(() => { setPokemonSearch(pokemonSearchList); }, [pokemonSearchList]);
 
-    useEffect(() => {
-        pokemonSearch.length !== 0 ? pokemon(pokemonSearch) : pokemon(pokemonSearchList);
-    }, [pokemonSearch]);
+    useEffect(() => { pokemonSearch.length !== 0 ? pokemon(pokemonSearch) : pokemon(pokemonSearchList); }, [pokemonSearch]);
 
     return (
         <form onSubmit={handleSubmit(handleSubmitList)} >
@@ -37,8 +30,8 @@ export const FormSearchList = ({ pokemonSearchList, pokemon }) => {
                 id="name"
                 placeholder={`${errors.name ? "Min 3 characters" : "Name in the list"}`}
                 className={`${errors.name ? "required" : ""}`}
-                {...register('name', { required: "Required field", minLength: 3, })
-                } />
+                {...register('name', { required: "Required field", minLength: 3, })}
+            />
             <BtnSearchNext type="submit" title="Search Pokemon"><img src={ImgBtnSearch} alt="pokeball icon" /></BtnSearchNext>
         </form>
     );
