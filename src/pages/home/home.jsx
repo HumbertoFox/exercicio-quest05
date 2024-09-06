@@ -16,9 +16,7 @@ export const Home = () => {
     const [listTypeSelected, setListTypeSelected] = useState([]);
     const { theme } = useContext(ThemeContext);
 
-    const urlApiGet = async () => {
-        urlNext = await urlApiFetch();
-    };
+    const urlApiGet = async () => urlNext = await urlApiFetch();
 
     const updateList = async () => {
         const resUrl = await axios.get(urlNext.next);
@@ -26,9 +24,7 @@ export const Home = () => {
         setPokemonList(response => [...response, ...urlNext.results]);
     };
 
-    function newListPokemon(newList) {
-        setPokemonList(newList);
-    };
+    function newListPokemon(newList) { setPokemonList(newList); };
 
     function pokeTypeList(pokeListType) {
         increment = 10;
@@ -65,7 +61,6 @@ export const Home = () => {
             const response = await urlNext.results;
             setPokemonList(response);
         };
-
         getfetch();
     }, []);
 
