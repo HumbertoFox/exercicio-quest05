@@ -1,26 +1,25 @@
 import React, { useContext, useEffect, useState } from "react";
 import ReactLoading from 'react-loading';
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { urlApiFetchAbilities, urlApiFetchId } from "../../services/services";
-import { CardPokemon } from "../../components/card/pokemoncard";
-import { ThemeContext } from "../../components/contexts/themecontext";
-import { AbilitiesInfo, AbilitiesSub, Container, DivImg, DivOl, MainDetails, Section, TypesDiv, TypeH3, TypesOl, DinLeft, DivRight } from "../../components/styles/detailsstyle";
+import { CardPokemon } from "../card/pokemoncard";
+import { ThemeContext } from "../contexts/themecontext";
+import { AbilitiesInfo, AbilitiesSub, Container, DinLeft, DivImg, DivOl, DivRight, MainDetails, Section, TypeH3, TypesDiv, TypesOl } from "../styles/detailsclickedstyle";
 library.add(far);
-
-export const Details = () => {
-
+export const DetailsClicked = (detailsPokemon) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     const [pokemonId, setPokemonId] = useState(null);
     const [pokemonMoves, setPokemonMoves] = useState([]);
     const [pokemonAbilities, setPokemonAbilities] = useState([]);
+    const [isClosing, setIsClosing] = useState("false");
     const { theme } = useContext(ThemeContext);
-    const { id } = useParams();
-
     useEffect(() => {
         const fetchData = async () => {
             try {
+                const id = detailsPokemon.name;
                 const idData = await urlApiFetchId(id);
                 const movesData = idData.moves;
                 const abilitiesData = idData.abilities.map(async (ability) => {
@@ -39,18 +38,20 @@ export const Details = () => {
             };
         };
         fetchData();
-    }, [id]);
-
-    if (!pokemonId || !pokemonMoves || !pokemonAbilities) {
-        return <ReactLoading type='spin' color='#3C91E6' width={100} height={100} />;
+    }, [detailsPokemon]);
+    if (!pokemonId || !pokemonMoves || !pokemonAbilities) { return <ReactLoading type='spin' color='#3C91E6' width={100} height={100} />; };
+    const handleClose = () => {
+        setIsClosing("true");
+        setTimeout(() => {
+            detailsPokemon.onClose();
+        }, 5800);
     };
-
     return (
-        <Section style={{ color: theme.color, backgroundColor: theme.backgroundColor }} className={theme.color}>
+        <Section className={theme.color}>
             <h1>Pokémon Details</h1>
-            <Container>
-                <DinLeft className={theme.color} />
-                <DivRight className={theme.color} />
+            <Container style={{ color: theme.color, backgroundColor: theme.backgroundColor }} clicked={isClosing}>
+                <DinLeft className={theme.color} clicked={isClosing} />
+                <DivRight className={theme.color} clicked={isClosing} />
                 <DivImg>
                     <CardPokemon name={pokemonId.name} />
                 </DivImg>
@@ -88,7 +89,7 @@ export const Details = () => {
                     </AbilitiesInfo>
                 </MainDetails>
             </Container>
-            <Link to={'/'} title="Home"><FontAwesomeIcon icon="fa-regular fa-circle-left" title="Home" role="Home" /></Link>
+            <Link title="Home" onClick={() => { handleClose() }}><FontAwesomeIcon icon="fa-regular fa-circle-left" title="Home" role="Home" /></Link>
         </Section>
     );
 };

@@ -9,6 +9,15 @@ const WindowMoveLeft = keyframes`
         transform: rotateY(90deg);
     }
 `;
+const WindowMoveLeftUp = keyframes`
+    0% {
+        left: -25%;
+        transform: rotateY(90deg);
+    }
+    100% {
+        left: 0;
+    }
+`;
 
 const WindowMoveRight = keyframes`
     0% {
@@ -20,13 +29,49 @@ const WindowMoveRight = keyframes`
     }
 `;
 
+const WindowMoveRightUp = keyframes`
+    0% {
+        right: -25%;
+        transform: rotateY(90deg);
+    }
+    100% {
+        right: 0;
+    }
+`;
+
+const WindowMoveDown = keyframes`
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+    }
+`;
+
+const WindowMoveUp = keyframes`
+    0% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+`;
+
 const Section = styled.section`
+    position: absolute;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: 'Roboto', sans-serif;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     transition: .4s ease-in-out;
 
     h1 {
@@ -50,19 +95,21 @@ const Section = styled.section`
                 a:last-child svg {
                     color: #FFF;
                 }
+                a:last-child:hover svg {
+                    color: #0202F5;
+                }
             `;
         } else {
             return css`
                 a:last-child svg {
                     color: #0202F5;
                 }
+                a:last-child:hover svg {
+                    color: #000;
+                }
             `;
         };
     }};
-    a:last-child:hover svg {
-        color: #F50202;
-        text-shadow: 0 0 2px #0202F5;
-    }
 `;
 
 const Container = styled.div`
@@ -76,6 +123,17 @@ const Container = styled.div`
     border: 1px solid #999;
     border-radius: 0 20px;
     box-shadow: 10px 10px 10px #999;
+    ${({ clicked }) => {
+        if (clicked === "false") {
+            return css`
+                animation: ${WindowMoveDown} .8s backwards;
+            `;
+        } else {
+            return css`
+                animation: ${WindowMoveUp} .8s backwards 5s;
+            `;
+        };
+    }}
 
     ::-webkit-scrollbar {
         width: 8px;
@@ -315,7 +373,17 @@ const DinLeft = styled.div`
     left: 0;
     background-color: red;
     border-bottom-left-radius: 20px;
-    animation: ${WindowMoveLeft} 5s both 1s;
+    ${({ clicked }) => {
+        if (clicked === "false") {
+            return css`
+                animation: ${WindowMoveLeft} 5s both .8s;
+            `;
+        } else {
+            return css`
+                animation: ${WindowMoveLeftUp} 5s forwards;
+            `;
+        };
+    }}
 `;
 
 const DivRight = styled.div`
@@ -337,7 +405,17 @@ const DivRight = styled.div`
     right: 0;
     background-color: red;
     border-top-right-radius: 20px;
-    animation: ${WindowMoveRight} 5s both 1s;
+    ${({ clicked }) => {
+        if (clicked === "false") {
+            return css`
+                animation: ${WindowMoveRight} 5s both .8s;
+            `;
+        } else {
+            return css`
+                animation: ${WindowMoveRightUp} 5s forwards;
+            `;
+        };
+    }}
 `;
 
 export { Section, Container, DivImg, MainDetails, TypesOl, TypesDiv, TypeH3, DivOl, AbilitiesInfo, AbilitiesSub, DinLeft, DivRight };

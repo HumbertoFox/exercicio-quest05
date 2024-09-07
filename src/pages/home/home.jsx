@@ -1,17 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
-import ReactLoading from 'react-loading';
 import { BtnSearchNext, DivForm, Section, UlList } from "../../components/styles/homestyle"
+import { DetailsClicked } from "../../components/details";
 import { ThemeContext } from "../../components/contexts/themecontext";
 import { urlApiFetch } from "../../services/services";
 import { CardPokemon } from "../../components/card/pokemoncard";
 import { FormSearchList } from "../../components/form/inputs";
 import { SelectType } from "../../components/form/selects";
+import ReactLoading from 'react-loading';
 import ImgPokeBall from "../../assets/pokeball.png";
 import axios from "axios";
 var urlNext, increment;
 
 export const Home = () => {
 
+    const [detailsPokemon, setDetailsPokemon] = useState(null);
     const [pokemonList, setPokemonList] = useState(null);
     const [listTypeSelected, setListTypeSelected] = useState([]);
     const { theme } = useContext(ThemeContext);
@@ -23,7 +25,7 @@ export const Home = () => {
         urlNext = await resUrl.data;
         setPokemonList(response => [...response, ...urlNext.results]);
     };
-
+    function handleDetailsClose() { setDetailsPokemon(null); };
     function newListPokemon(newList) { setPokemonList(newList); };
 
     function pokeTypeList(pokeListType) {
@@ -75,19 +77,18 @@ export const Home = () => {
                 <SelectType pokeTypeSelectedList={pokeTypeList} />
             </DivForm>
             <UlList className={theme.color}>
-                {
-                    pokemonList.map((pokemonUnid, index) => {
-                        return (
-                            <li key={index}>
-                                <CardPokemon name={pokemonUnid.name} />
-                            </li>
-                        );
-                    })
-                }
+                {pokemonList.map((pokemonUnid, index) => {
+                    return (
+                        <li key={index}>
+                            <CardPokemon name={pokemonUnid.name} onDetailsClick={() => setDetailsPokemon(pokemonUnid)} />
+                        </li>
+                    );
+                })}
             </UlList>
             <BtnSearchNext type="button" title="Load More" onClick={listTypeSelected.length === 10 || listTypeSelected.length === 0 ? () => updateList() : () => listTypeSelect()}>
                 <img src={ImgPokeBall} alt="Ico pokeball" />
             </BtnSearchNext>
+            {detailsPokemon && <DetailsClicked {...detailsPokemon} onClose={handleDetailsClose} />}
         </Section>
     );
 };

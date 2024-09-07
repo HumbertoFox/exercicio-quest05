@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ReactLoading from 'react-loading';
 import { urlApiFetchId, urlApiFetchImg } from "../../services/services";
-
-export const CardPokemon = ({ name }) => {
+import ReactLoading from 'react-loading';
+export const CardPokemon = ({ name, onDetailsClick }) => {
     const [pokemon, setPokemon] = useState(null);
     const [pokemonId, setPokemonId] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
     const updateFetchId = async () => {
         try {
             const response = await urlApiFetchId(name);
@@ -17,7 +15,6 @@ export const CardPokemon = ({ name }) => {
             setError(error.message);
         };
     };
-
     const updateFetchName = async () => {
         try {
             const response = await urlApiFetchImg(name);
@@ -28,28 +25,19 @@ export const CardPokemon = ({ name }) => {
             setLoading(false);
         };
     };
-
     useEffect(() => {
         updateFetchName();
         updateFetchId();
     }, [name]);
-
-    if (loading) {
-        return <ReactLoading type='spin' color='#3C91E6' width={70} height={70} />;
-    };
-
-    if (error) {
-        return <span>Error: {error}</span>;
-    };
-
+    if (loading) { return <ReactLoading type='spin' color='#3C91E6' width={70} height={70} />; };
+    if (error) { return <span>Error: {error}</span>; };
     if (!pokemon || !pokemonId) {
         return <span>-</span>;
     };
-
     return (
         <>
             <h2>{pokemonId.name}</h2>
-            <Link to={`/details/${pokemonId.id}`}>
+            <Link onClick={onDetailsClick}>
                 <img src={pokemon.other.showdown.back_default !== null ? pokemon.other.showdown.back_default : pokemon.front_default} alt={`Image ${pokemonId.name}`} />
                 <img src={pokemon.other.showdown.front_default !== null ? pokemon.other.showdown.front_default : pokemon.front_default} alt={`Image ${pokemonId.name}`} />
             </Link>

@@ -25,6 +25,7 @@ const movey = keyframes`
 `;
 
 const Section = styled.section`
+    position: relative;
     width: 100%;
     height: 100%;
     padding-bottom: 20px;
@@ -59,7 +60,7 @@ const DivForm = styled.div`
     }
     svg {
         margin-right: -32px;
-        z-index: 1;
+        z-index: 0;
         color: grey;
     }
     input[type=search] {
