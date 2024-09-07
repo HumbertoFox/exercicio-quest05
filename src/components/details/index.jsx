@@ -89,7 +89,7 @@ export const DetailsClicked = (detailsPokemon) => {
                     </AbilitiesInfo>
                 </MainDetails>
             </Container>
-            <Link title="Home" onClick={() => { handleClose() }}><FontAwesomeIcon icon="fa-regular fa-circle-left" title="Home" role="Home" /></Link>
+            <Link title="Home" onClick={handleClose}><FontAwesomeIcon icon="fa-regular fa-circle-left" title="Home" role="Home" /></Link>
         </Section>
     );
 };
