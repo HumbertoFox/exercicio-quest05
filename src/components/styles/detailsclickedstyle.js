@@ -61,13 +61,14 @@ const WindowMoveUp = keyframes`
 `;
 
 const Section = styled.section`
-    position: absolute;
+    position: fixed;
     width: 100%;
     min-height: 100%;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     font-family: 'Roboto', sans-serif;
     -webkit-backdrop-filter: blur(10px);
